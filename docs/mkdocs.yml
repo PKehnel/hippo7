@@ -1,0 +1,29 @@
+site_name: hippo7
+use_directory_urls: false
+
+theme:
+  name: 'material'
+  logo: 'assets/images/luminovo-circle.svg'
+  favicon: 'assets/images/favicon.ico'
+  palette:
+    primary: 'indigo'
+    accent: 'yellow'
+  font:
+    text: 'Muli'
+    code: 'Roboto Mono'
+
+
+nav:
+  - Overview: index.md
+  - Glossary: glossary.md
+
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.arithmatex
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'

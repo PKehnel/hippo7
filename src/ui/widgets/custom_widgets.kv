@@ -1,0 +1,185 @@
+#:kivy 1.11.1
+#:import cw ui.widgets.custom_widgets
+
+# NodeWidgets for displaying standard types:
+<NodeWidget>
+    param_name: "some param"
+    node_name: "some node"
+    set_value: None
+
+<NodeSlider@NodeWidget>:
+    slider_transform: lambda x: x
+    slider_transform_inverse: lambda x: x
+    slider_show: lambda x: f"{x:.3f}"
+    min: 0
+    max: 10
+    step: 1
+    BoxLayout:
+        padding: [20, 0]
+        TextInput:
+            multiline: False
+            size_hint: (None, None)
+            height: 30
+            width: 90
+            halign: 'center'
+            text: root.slider_show(root.value)
+            on_text_validate: root.set_value(root.node_name, root.param_name, float(self.text))
+            pos_hint: {'center_y': 0.5, 'x': 0}
+        Slider:
+            id: slider
+            value_track: True
+            value_track_color: [52/255, 180/255, 227/255, 1]
+            min: root.min
+            max: root.max
+            step: root.step
+            value: min(max(root.min, root.slider_transform_inverse(root.value)), root.max)
+            # dirty hack, since normally on_touch_up triggers twice, once from post_dispatch_input and then from the widget
+            # https://github.com/kivy/kivy/issues/1282
+            on_touch_up: if args[1].grab_current is not None: root.set_value(root.node_name, root.param_name, root.slider_transform(self.value))
+
+<NodeSwitch@NodeWidget>
+    Switch:
+        id: switch
+        active: root.value
+        on_active: root.set_value(root.node_name, root.param_name, self.active)
+
+<NodeDisplay@NodeWidget>
+    TextInput:
+        multiline: False
+        halign: 'center'
+        text: root.value
+        on_text_validate: root.set_value(root.node_name,root.param_name, self.text)
+
+<NodeColor@NodeWidget>
+    ColorPicker:
+        on_color: root.set_value(root.node_name, root.param_name, self.color[0:-1])
+
+<NodeRV@NodeWidget>
+
+<NodeMultiWidget@NodeWidget>
+
+
+#Custom Buttons for simple functions
+<CustomButton>
+    text: "custom"
+    start_value: 1.0
+    start_value_function: None
+    function: lambda x: x
+    function_call_back: None
+    hold_down: False
+    on_press: root.start_event()
+    on_release: root.cancel_btn_event()
+
+<IncButton@CustomButton>
+    text: "+"
+    function: lambda x: x + 1.0
+    hold_down: True
+
+<DecButton@CustomButton>
+    text: "-"
+    function: lambda x: x - 1.0
+    hold_down: True
+
+<DivideButton@CustomButton>
+    text: "x0.5"
+    function: lambda x: x * 0.5
+    hold_down: False
+
+<DoubleButton@CustomButton>
+    text: "x2"
+    function: lambda x: x * 2.0
+    hold_down: False
+
+#BPM Widget related
+<BPMBasics@BoxLayout>
+    f1: None
+    f2: None
+    BoxLayout:
+        IncButton:
+            id: bpm_inc
+            start_value_function: root.f1
+            function_call_back: root.f2
+        DecButton:
+            id: bpm_dec
+            start_value_function: root.f1
+            function_call_back: root.f2
+    BoxLayout:
+        DivideButton:
+            id: bpm_div
+            start_value_function: root.f1
+            function_call_back: root.f2
+        DoubleButton:
+            id: bpm_double
+            start_value_function: root.f1
+            function_call_back: root.f2
+
+<BPMAnimation>:
+    canvas:
+        Color:
+            rgb: self.col, self.col, self.col
+        Rectangle:
+            pos: self.x + self.width*self.beat_num/4, self.y + self.height/4
+            size: self.width/4, self.height /2
+
+# Auto Completion Related
+<ClassSelection>:
+    BoxLayout:
+        BoxLayout:
+            BoxLayout:
+                id: class_pool
+                padding: 5
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 5
+                BoxLayout:
+                    id: class_selection
+                BoxLayout:
+                    id: buttons
+                    padding: 5
+                    size_hint_y: 0.2
+
+<DropDownWidget>:
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    canvas:
+        Color:
+            rgba:(1, 1, 1, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    orientation: 'vertical'
+
+<AutoCompleteTextInput>:
+    readonly: False
+    multiline: False
+    halign: 'center'
+    text_origin: 0
+    on_text_validate: root.add_class_to_pool(self.text, self.text_origin)
+
+<SelectableLabel>:
+    # Draw a background to indicate selection
+    color: 0,0,0,1
+    canvas.before:
+        Color:
+            rgba: (0, 0, 1, .5) if self.selected else (1, 1, 1, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<RV>:
+    canvas:
+        Color:
+            rgba: 0,0,0,.2
+
+        Line:
+            rectangle: self.x +1 , self.y, self.width - 2, self.height -2
+
+    bar_width: 10
+    scroll_type:['bars']
+    viewclass: 'SelectableLabel'
+    SelectableRecycleBoxLayout:
+        default_size: None, dp(20)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: False

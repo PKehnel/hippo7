@@ -1,0 +1,52 @@
+image: luminovo/python:3.7-poetry1.0.2
+
+# Change pip's cache directory to be inside the project directory since we can
+# only cache local items.
+variables:
+  PRE_COMMIT_VERSION: "1.15.1"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  DOCKER_DRIVER: overlay2
+  # Note that if you're using Kubernetes executor, the variable should be set to
+  # tcp://localhost:2375 because of how Kubernetes executor connects services
+  # to the job container
+  DOCKER_HOST: tcp://localhost:2375/
+  # Due to automatic TLS generation and enabling (https://github.com/docker-library/docker/pull/166)
+  # this needs to be unset
+  DOCKER_TLS_CERTDIR: ""
+
+before_script:
+  # gitlab cannot pickup absolute path, hence use a local virtualenv
+  - poetry config virtualenvs.create true
+  - poetry config virtualenvs.in-project true
+
+
+
+stages:
+  - immediate
+  - unit-test
+
+.retries:
+  retry:
+    max: 2
+    when:
+      - runner_system_failure
+      - stuck_or_timeout_failure
+
+Check:
+  extends: .retries
+  stage: immediate
+  before_script:
+    - pip install pre-commit==$PRE_COMMIT_VERSION
+  script:
+    - make -s check
+
+Unit tests:
+  extends: .retries
+  stage: unit-test
+  script:
+    echo "skipping testing, because we are lacking privileges to properly install docker"
+    #- make build-docker
+    #- make test-docker
+  coverage: '/TOTAL.*\s+(\d+\%)/'
+  tags:
+    - medium-load-runners

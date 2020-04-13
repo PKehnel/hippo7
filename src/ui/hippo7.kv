@@ -1,0 +1,66 @@
+#:kivy 1.11.1
+#:include ui/widgets/custom_widgets.kv
+
+<GlobalBPMWidget>:
+    orientation: 'vertical'
+    BoxLayout:
+        Label:
+            text: root.bpm_text
+        BPMAnimation:
+            id: bpm_animation
+    BoxLayout:
+        Button:
+            text: "Detect BPM"
+            on_press: root.detect_bpm()
+            id: bpm_detect
+        Button:
+            text: "Auto Detect"
+            on_press: root.auto_detect()
+            id: auto_detect
+        Button:
+            text: "Tap Detection"
+            on_press: root.tap_detect()
+            id: tap_detect
+    BPMBasics:
+        id: bpm_basics
+        f1: root.get_bpm
+        f2: root.set_bpm
+
+<NodePage>:
+    BoxLayout:
+        BoxLayout:
+            #BoxLayout:
+            #    size_hint_x: 0.33
+            #    size_hint_y: 0.2
+            #    pos_hint: {'top':1}
+            #    padding: 10
+            #    id: bpm_widget
+            BoxLayout:
+                orientation: 'vertical'
+                id: widgets
+
+<Hippo7Layout>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 0.2
+            BoxLayout:
+                size_hint_x: 0.15
+                padding: 10
+                id: play_button
+            BoxLayout:
+                size_hint_x: 0.33
+                padding: 10
+                id: bpm_widget
+            GridLayout:
+                rows: 2
+                id: pipe_navigation
+                canvas:
+
+        ScreenManager:
+            id: screen_manager_SL
+        GridLayout:
+            id: presets
+            size_hint_y: 0.2
+            rows: 2
+            cols: 8
