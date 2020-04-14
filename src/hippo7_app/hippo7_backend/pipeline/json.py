@@ -9,13 +9,13 @@ import torch
 from pydantic import BaseModel
 
 import hippo7_app.hippo7_backend.pipeline.nodes as N
+from hippo7_app.hippo7_backend.pipeline.graph import Node
 from hippo7_app.hippo7_backend.pipeline.graph import NodeInput
 from hippo7_app.hippo7_backend.pipeline.graph import NodeOutput
 from hippo7_app.hippo7_backend.pipeline.graph import Preset
 from hippo7_app.hippo7_backend.pipeline.graph import RenderGraph
 from hippo7_app.hippo7_backend.pipeline.graph import TogglePreset
 from hippo7_app.hippo7_backend.pipeline.types import Ntype
-from hippo7_app.hippo7_backend.pipeline.graph import Node
 
 
 class NodeMessage(BaseModel):

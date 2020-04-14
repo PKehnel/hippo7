@@ -8,8 +8,6 @@ from hippo7_app.hippo7_backend.pipeline.json import node_behaviours_to_json
 from hippo7_app.hippo7_backend.pipeline.json import node_to_json
 
 
-
-
 def test_to_json(node_factory):
     cls, params = node_factory
     node = cls(**params)

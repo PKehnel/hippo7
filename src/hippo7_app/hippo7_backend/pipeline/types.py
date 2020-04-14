@@ -97,7 +97,7 @@ class Tuple(Ntype):
 
 
 class FixedSelector(Ntype):
-    def __init__(self, ntype, known_values= None):
+    def __init__(self, ntype, known_values=None):
         self.ntype = ntype
         self.known_values = known_values if known_values else []
 

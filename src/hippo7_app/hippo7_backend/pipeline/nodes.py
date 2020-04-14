@@ -13,18 +13,23 @@ from glumpy import glm
 from glumpy import gloo
 
 from hippo7_app.hippo7_backend import get_asset_folder
-from hippo7_app.hippo7_backend.opengl.geometry import correctly_rotated_model_matrix, to_tex_format, load_file
+from hippo7_app.hippo7_backend.opengl.geometry import correctly_rotated_model_matrix
+from hippo7_app.hippo7_backend.opengl.geometry import load_file
+from hippo7_app.hippo7_backend.opengl.geometry import to_tex_format
 from hippo7_app.hippo7_backend.opengl.render import WindowManager
 from hippo7_app.hippo7_backend.opengl.shaders import get_shader
-from hippo7_app.hippo7_backend.pipeline import song_dict, mesh_dict
+from hippo7_app.hippo7_backend.pipeline import mesh_dict
+from hippo7_app.hippo7_backend.pipeline import song_dict
 from hippo7_app.hippo7_backend.pipeline.graph import Node
 from hippo7_app.hippo7_backend.pipeline.graph import NodeInput
 from hippo7_app.hippo7_backend.pipeline.graph import NodeOutput
 from hippo7_app.hippo7_backend.pipeline.graph import T
-from hippo7_app.hippo7_backend.pipeline.nodes_util import BeatTimeMessage, create_noise_vector, create_class_vector, \
-    generate_model_file, toNumpy
-
+from hippo7_app.hippo7_backend.pipeline.nodes_util import BeatTimeMessage
+from hippo7_app.hippo7_backend.pipeline.nodes_util import create_class_vector
+from hippo7_app.hippo7_backend.pipeline.nodes_util import create_noise_vector
+from hippo7_app.hippo7_backend.pipeline.nodes_util import generate_model_file
 from hippo7_app.hippo7_backend.pipeline.nodes_util import time_generator
+from hippo7_app.hippo7_backend.pipeline.nodes_util import toNumpy
 
 
 class DrawNode(Node):
@@ -743,7 +748,12 @@ class ClassSampler(Node):
     """
 
     class_pool = NodeInput(list(range(0, 999)), ntype=T.List(T.UInt()))
-    sample_options = NodeInput("Random", ntype=T.FixedSelector(T.String(), ["Star","Continuous","Ping Pong","Random"]),)
+    sample_options = NodeInput(
+        "Random",
+        ntype=T.FixedSelector(
+            T.String(), ["Star", "Continuous", "Ping Pong", "Random"]
+        ),
+    )
     resample_center_every_n = NodeInput(
         (False, 8), ntype=T.Tuple(T.Bool(), T.UInt(lower_bound=1, upper_bound=15))
     )
@@ -870,7 +880,19 @@ class NoiseSampler(Node):
             sampling scheme.
     """
 
-    sample_options = NodeInput("Ping Pong", ntype=T.Selector(T.String(), ["Simple Rotation", "Complex Rotation", "Ping Pong","Random","Random Star"]))
+    sample_options = NodeInput(
+        "Ping Pong",
+        ntype=T.Selector(
+            T.String(),
+            [
+                "Simple Rotation",
+                "Complex Rotation",
+                "Ping Pong",
+                "Random",
+                "Random Star",
+            ],
+        ),
+    )
     truncation = NodeInput(1.0, ntype=T.Float(0, 10))
     rotation_speed = NodeInput(0.125, ntype=T.Float(0, 1))
     sampler = NodeOutput(ntype=T.Sampler())
@@ -1106,8 +1128,19 @@ class ComplexFunction(Node):
     z = NodeInput(1.0, ntype=T.Float(0, 1))
     abc = NodeInput((1.0, 1.0, 1.0), ntype=T.Vector3(0, 1))
     function = NodeInput(
-        "x+y", ntype=T.Selector(T.MathFunction(), ["x", "y", "0", "1","0.5-cos(x*3*pi)","x**y*(a)+(1-a)",
-                "x**y*(a+b*sin(c*x*pi))+(1-(a+b*sin(c*x*pi)))"])
+        "x+y",
+        ntype=T.Selector(
+            T.MathFunction(),
+            [
+                "x",
+                "y",
+                "0",
+                "1",
+                "0.5-cos(x*3*pi)",
+                "x**y*(a)+(1-a)",
+                "x**y*(a+b*sin(c*x*pi))+(1-(a+b*sin(c*x*pi)))",
+            ],
+        ),
     )
 
     result = NodeOutput(ntype=T.Float())

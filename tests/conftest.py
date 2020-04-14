@@ -10,7 +10,7 @@ from hippo7_app.hippo7_backend import graph_setup
 
 sys.path.append("src/")  # NOQA
 sys.path.append("../src/")  # NOQA
-import hippo7_app.hippo7_backend.pipeline.nodes as  N
+import hippo7_app.hippo7_backend.pipeline.nodes as N
 from hippo7_app.hippo7_backend.opengl.render import WindowManager
 from hippo7_app.hippo7_backend.pipeline.graph import RenderGraph
 from hippo7_app.hippo7_backend.pipeline.json import get_classes_from_module

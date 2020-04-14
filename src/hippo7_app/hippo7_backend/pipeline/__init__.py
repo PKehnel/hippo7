@@ -11,5 +11,5 @@ audio_folder = get_asset_folder() / "audio"
 songs = list(audio_folder.glob("*.mp3"))
 song_dict = {}
 for song in songs:
-    song_name = str(song).rpartition("/")[2].rstrip(".mp3")
+    song_name = str(song).rpartition("/")[2].replace(".mp3", "")
     song_dict[song_name] = song
