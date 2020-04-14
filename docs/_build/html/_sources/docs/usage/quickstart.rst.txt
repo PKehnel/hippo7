@@ -6,7 +6,7 @@ Again start the backend and the frontend in this order with following commands:
 
 .. code-block:: shell
 
-    $ python3 render_server.py
+    $ poetry run python3 render_server.py
 
 If you have successfully finished the installation, you should now have this window:
 
@@ -16,7 +16,7 @@ Once the backend is running, you can start the frontend.
 
 .. code-block:: shell
 
-    $ python3 frontend_app.py
+    $ poetry run python3 frontend_app.py
 
 
 The  frontend App Hippo7, looking somehow similar to this should appear on your screen:

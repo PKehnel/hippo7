@@ -46,15 +46,15 @@ Linux
     poetry install
 
 
-3. Start the server and the tool.
+3. Start the backend server and the frontend app.
 
 .. code-block:: shell
 
-    $ python3 render_server.py
+    $ poetry run python3 render_server.py
 
 .. code-block:: shell
 
-    $ python3 frontend_app.py
+    $ poetry run python3 frontend_app.py
 
 If you now see two windows, the stream and the visual jockey tool, then everything is setup correctly and you can start
 configuring it manually.
