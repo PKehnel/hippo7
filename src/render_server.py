@@ -33,8 +33,9 @@ window = app.Window(512, 512, fullscreen=False, decoration=True)
 WindowManager.bind_window(window)
 
 # Instantiate generator
-generator = simple_gan_setup(model_type=model_type)
+# generator = simple_gan_setup(model_type=model_type)
 # generator = no_gan_setup()
+generator = complex_gan_setup(model_type=model_type)
 visualize_graph(generator)
 generator.to_device(get_device())
 
