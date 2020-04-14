@@ -77,7 +77,7 @@ def complex_gan_setup(model_type="biggan-deep-128"):
         N.ComplexFunction(x=g["bpm_clock"].normalized_time, y=1.0, function="x"),
         name="noise_timing",
     )
-    g.add_node(N.NoiseSampler(sample_options="SimpleRotation"), name="noise_sampler")
+    g.add_node(N.NoiseSampler(), name="noise_sampler")
     g.add_node(
         N.ComplexFunction(
             x=g["bpm_clock"].normalized_time,

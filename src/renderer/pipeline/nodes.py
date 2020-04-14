@@ -748,7 +748,7 @@ class ClassSampler(Node):
     """
 
     class_pool = NodeInput(list(range(0, 999)), ntype=T.List(T.UInt()))
-    sample_options = NodeInput("random", ntype=T.FixedSelector(T.String(), []),)
+    sample_options = NodeInput("Random", ntype=T.FixedSelector(T.String(), ["Star","Continuous","Ping Pong","Random"]),)
     resample_center_every_n = NodeInput(
         (False, 8), ntype=T.Tuple(T.Bool(), T.UInt(lower_bound=1, upper_bound=15))
     )
@@ -759,10 +759,10 @@ class ClassSampler(Node):
         super(ClassSampler, self).__init__(**kwargs)
         self.sampler = self.sample
         self.sample_schema = {
-            "star": ClassSampler.Star,
-            "continuous": ClassSampler.Continuous,
-            "ping_pong": ClassSampler.PingPong,
-            "random": ClassSampler.Random,
+            "Star": ClassSampler.Star,
+            "Continuous": ClassSampler.Continuous,
+            "Ping Pong": ClassSampler.PingPong,
+            "Random": ClassSampler.Random,
         }
         self._in_edges["sample_options"].ntype.known_values = self.sample_schema.keys()
         self.step_counter = 0
@@ -875,7 +875,7 @@ class NoiseSampler(Node):
             sampling scheme.
     """
 
-    sample_options = NodeInput("PingPong", ntype=T.Selector(T.String(), []))
+    sample_options = NodeInput("Ping Pong", ntype=T.Selector(T.String(), ["Simple Rotation", "Complex Rotation", "Ping Pong","Random","Random Star"]))
     truncation = NodeInput(1.0, ntype=T.Float(0, 10))
     rotation_speed = NodeInput(0.125, ntype=T.Float(0, 1))
     sampler = NodeOutput(ntype=T.Sampler())
@@ -887,9 +887,9 @@ class NoiseSampler(Node):
         self.step_counter = 1
         self.class_pool = list(range(0, 5))
         self.sample_schema = {
-            "PingPong": NoiseSampler.PingPong,
-            "SimpleRotation": NoiseSampler.SimpleRotation,
-            "ComplexRotation": NoiseSampler.ComplexRotation,
+            "Ping Pong": NoiseSampler.PingPong,
+            "Simple Rotation": NoiseSampler.SimpleRotation,
+            "Complex Rotation": NoiseSampler.ComplexRotation,
             "Random": NoiseSampler.Random,
             "RandomStar": NoiseSampler.RandomStar,
         }
@@ -1111,7 +1111,8 @@ class ComplexFunction(Node):
     z = NodeInput(1.0, ntype=T.Float(0, 1))
     abc = NodeInput((1.0, 1.0, 1.0), ntype=T.Vector3(0, 1))
     function = NodeInput(
-        "x+y", ntype=T.Selector(T.MathFunction(), ["x", "y", "0", "1"])
+        "x+y", ntype=T.Selector(T.MathFunction(), ["x", "y", "0", "1","0.5-cos(x*3*pi)","x**y*(a)+(1-a)",
+                "x**y*(a+b*sin(c*x*pi))+(1-(a+b*sin(c*x*pi)))"])
     )
 
     result = NodeOutput(ntype=T.Float())
