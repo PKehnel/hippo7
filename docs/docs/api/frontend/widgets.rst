@@ -19,13 +19,13 @@ certain buttons.
 For example a float will always be displayed with a slider. Additional information like the min/max or the
 stepsize can be parsed alongside.
 
-.. autoclass:: src.ui.widgets.custom_widgets.NodeWidget
-.. autoclass:: src.ui.widgets.custom_widgets.NodeSwitch
-.. autoclass:: src.ui.widgets.custom_widgets.NodeSlider
-.. autoclass:: src.ui.widgets.custom_widgets.NodeColor
-.. autoclass:: src.ui.widgets.custom_widgets.NodeDisplay
-.. autoclass:: src.ui.widgets.custom_widgets.CustomButton
-.. autoclass:: src.ui.widgets.custom_widgets.CustomToggleButton
+.. autoclass:: src.hippo7_app.hippo7_frontend.widgets.custom_widgets.NodeWidget
+.. autoclass:: src.hippo7_app.hippo7_frontend.widgets.custom_widgets.NodeSwitch
+.. autoclass:: src.hippo7_app.hippo7_frontend.widgets.custom_widgets.NodeSlider
+.. autoclass:: src.hippo7_app.hippo7_frontend.widgets.custom_widgets.NodeColor
+.. autoclass:: src.hippo7_app.hippo7_frontend.widgets.custom_widgets.NodeDisplay
+.. autoclass:: src.hippo7_app.hippo7_frontend.widgets.custom_widgets.CustomButton
+.. autoclass:: src.hippo7_app.hippo7_frontend.widgets.custom_widgets.CustomToggleButton
 
 Custom Widgets
 --------------
@@ -41,7 +41,7 @@ In the frontend you can manipulate, reorder ... this pool with the class selecti
 
 .. _Class_Selection_Widget:
 
-.. automodule:: src.ui.widgets.class_selection
+.. automodule:: src.hippo7_app.hippo7_frontend.widgets.class_selection
     :members:
 
 .. _Bpm_Widget:
@@ -52,7 +52,7 @@ BPM Manager
 This widget handles detecting, setting or adjusting of the BPM. This is the only computation actually done in
 the frontend, since often the frontend device is physically next to the music.
 
-.. automodule:: src.ui.widgets.bpm_widget
+.. automodule:: src.hippo7_app.hippo7_frontend.widgets.bpm_widget
     :members:
     :exclude-members: BPMAnimation
 

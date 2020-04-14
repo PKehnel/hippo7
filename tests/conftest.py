@@ -6,14 +6,14 @@ from unittest.mock import Mock
 
 import pytest
 
-from renderer import graph_setup
+from hippo7_app.hippo7_backend import graph_setup
 
 sys.path.append("src/")  # NOQA
 sys.path.append("../src/")  # NOQA
-import renderer.pipeline.nodes as N
-from renderer.opengl.render import WindowManager
-from renderer.pipeline.graph import RenderGraph
-from renderer.pipeline.json import get_classes_from_module
+import hippo7_app.hippo7_backend.pipeline.nodes as  N
+from hippo7_app.hippo7_backend.opengl.render import WindowManager
+from hippo7_app.hippo7_backend.pipeline.graph import RenderGraph
+from hippo7_app.hippo7_backend.pipeline.json import get_classes_from_module
 
 
 @pytest.fixture(autouse=True, scope="session")
@@ -52,7 +52,7 @@ def node_name(request) -> str:
     ids=get_classes_from_module(N, N.Node).keys(),
     scope="session",
 )
-@mock.patch("renderer.pipeline.nodes.gloo.Program", mock_shader)
+@mock.patch("hippo7_app.hippo7_backend.pipeline.nodes.gloo.Program", mock_shader)
 def node_factory(request) -> Tuple[type, dict]:
     name, cls = request.param
     params = {}
@@ -73,13 +73,13 @@ def node(node_factory):
 
 @pytest.fixture(
     params=[
-        graph_setup.setup_no_gan,
+        graph_setup.no_gan_setup,
         graph_setup.simple_gan_setup,
         graph_setup.complex_gan_setup,
     ],
     ids=["setup_no_gan", "simple_gan_setup", "complex_gan_setup"],
 )
-@mock.patch("renderer.pipeline.nodes.gloo.Program", mock_shader)
+@mock.patch("hippo7_app.hippo7_backend.pipeline.nodes.gloo.Program", mock_shader)
 def graph(request):
     g = request.param()
     return g

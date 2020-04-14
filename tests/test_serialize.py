@@ -1,11 +1,13 @@
 from unittest import mock
 from unittest.mock import MagicMock
 
-from renderer.pipeline.json import graph_to_json
-from renderer.pipeline.json import json_to_graph
-from renderer.pipeline.json import node_behaviour_to_json
-from renderer.pipeline.json import node_behaviours_to_json
-from renderer.pipeline.json import node_to_json
+from hippo7_app.hippo7_backend.pipeline.json import graph_to_json
+from hippo7_app.hippo7_backend.pipeline.json import json_to_graph
+from hippo7_app.hippo7_backend.pipeline.json import node_behaviour_to_json
+from hippo7_app.hippo7_backend.pipeline.json import node_behaviours_to_json
+from hippo7_app.hippo7_backend.pipeline.json import node_to_json
+
+
 
 
 def test_to_json(node_factory):
@@ -21,7 +23,7 @@ def shader(*args, **kwargs):
     return s
 
 
-@mock.patch("renderer.pipeline.nodes.gloo.Program", shader)
+@mock.patch("hippo7_app.hippo7_backend.pipeline.nodes.gloo.Program", shader)
 def test_graph(graph):
     jsonified_graph = graph_to_json(graph)
     graph_json = jsonified_graph.json()

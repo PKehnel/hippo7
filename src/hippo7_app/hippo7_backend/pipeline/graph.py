@@ -5,7 +5,7 @@ from typing import Callable
 from typing import Dict
 from typing import Union
 
-import renderer.pipeline.types as T
+import hippo7_app.hippo7_backend.pipeline.types as T
 
 
 class DefaultValue:

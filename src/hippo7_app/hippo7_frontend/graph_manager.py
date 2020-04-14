@@ -1,6 +1,6 @@
 from abc import abstractmethod
 
-from ui.backend_interface import BackendInterface
+from hippo7_app.hippo7_frontend.backend_interface import BackendInterface
 
 
 class Observable(object):

@@ -50,7 +50,7 @@ Linux
 
 .. code-block:: shell
 
-    $ poetry run python3 render_server.py
+    $ poetry run python3 backend_server.py
 
 .. code-block:: shell
 

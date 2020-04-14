@@ -23,7 +23,7 @@ Graph
 The Graph itself is a wrapping data structure that allows at runtime manipulation of some of its values.
 
 .. _RenderGraph:
-.. autoclass:: src.renderer.pipeline.graph.RenderGraph
+.. autoclass:: src.hippo7_app.hippo7_backend.pipeline.graph.RenderGraph
     :members:
 
 Presets
@@ -34,12 +34,12 @@ quick change if multiple node inputs(so called DefaultValues_).
 
 
 .. _Preset:
-.. autoclass:: src.renderer.pipeline.graph.Preset
+.. autoclass:: src.hippo7_app.hippo7_backend.pipeline.graph.Preset
     :members:
 
 
 .. _TogglePreset:
-.. autoclass:: src.renderer.pipeline.graph.TogglePreset
+.. autoclass:: src.hippo7_app.hippo7_backend.pipeline.graph.TogglePreset
     :members:
 
 Nodes
@@ -49,7 +49,7 @@ Nodes are simple computation units in the RenderGraph_ and are all implementatio
 
 
 .. _Nodes:
-.. autoclass:: src.renderer.pipeline.graph.Node
+.. autoclass:: src.hippo7_app.hippo7_backend.pipeline.graph.Node
    :members:
 
 .. _New_Nodes:
@@ -59,8 +59,8 @@ Creating New Nodes
 
 To create a new custom node, simply follow the this template::
 
-    from renderer.pipeline.graph import Node, NodeInput, NodeOutput
-    import renderer.pipeline.types as T
+    from hippo_app.hippo7_backend.pipeline.graph import Node, NodeInput, NodeOutput
+    import hippo_app.hippo7_backend.pipeline.types as T
 
     class ComplexFunction(Node):
         firstInput = NodeInput(1.0, ntype=T.Float(-100, 100))
@@ -84,15 +84,15 @@ Inputs and Outputs
 Every node is made of inputs and outputs, that are connected to other Inputs/Outputs or are DefaultValues_.
 
 .. _NodeOutput:
-.. autoclass:: src.renderer.pipeline.graph.NodeOutput
+.. autoclass:: src.hippo7_app.hippo7_backend.pipeline.graph.NodeOutput
     :members:
 
 .. _NodeInput:
-.. autoclass:: src.renderer.pipeline.graph.NodeInput
+.. autoclass:: src.hippo7_app.hippo7_backend.pipeline.graph.NodeInput
     :members:
 
 .. _DefaultValues:
-.. autoclass:: src.renderer.pipeline.graph.DefaultValue
+.. autoclass:: src.hippo7_app.hippo7_backend.pipeline.graph.DefaultValue
     :members:
 
 
@@ -104,7 +104,7 @@ Types
 The types are currently for two things: The correct generation of the json serialization and the automatic inferring of
 the correct frontend widget to manipulate the value in case of a DefaultValues_. Currently, the following types are available:
 
-.. automodule:: src.renderer.pipeline.types
+.. automodule:: src.hippo7_app.hippo7_backend.pipeline.types
     :members:
     :undoc-members:
     :exclude-members: cast, copy, default_value, type_from_value

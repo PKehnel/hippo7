@@ -242,7 +242,7 @@ a Window node that provides access to the output window).</p>
 window and server. Congratulations! If you run the <code class="docutils literal notranslate"><span class="pre">render_server.py</span></code> you should get a blinking square as an output.</p>
 <img alt="../../../_images/debug_graph.gif" src="../../../_images/debug_graph.gif" />
 <p>Note that the .gif is not a perfect loop.</p>
-<p>Our graph looks as follows(plotted with <a class="reference internal" href="../../usage/quickstart.html#src.renderer.graph_setup.visualize_graph" title="src.renderer.graph_setup.visualize_graph"><code class="xref py py-func docutils literal notranslate"><span class="pre">src.renderer.graph_setup.visualize_graph()</span></code></a>:</p>
+<p>Our graph looks as follows(plotted with <code class="xref py py-func docutils literal notranslate"><span class="pre">src.hippo7_app.hippo7_backend.graph_setup.visualize_graph()</span></code>:</p>
 <div class="graphviz"><img src="../../../_images/graphviz-2172195c270e8f1156eef1145d1ac2d5a9b88db8.png" alt="digraph graphviz_graph {
 	node [shape=circle]
 	window [label=window]
@@ -271,8 +271,8 @@ window and server. Congratulations! If you run the <code class="docutils literal
 	window -&gt; draw [label=window]
 }" class="graphviz" /></div>
 <p>We can now add numerous more effects: For example, we could change the mesh(simply change the line <code class="docutils literal notranslate"><span class="pre">mesh=&quot;quad&quot;,</span></code>,
-add a rotation(add a <code class="xref py py-class docutils literal notranslate"><span class="pre">src.renderer.nodes.ModelMatrix</span></code>) or change the interpolation speed/function by adding a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">src.renderer.nodes.ComplexFunction</span></code>.</p>
+add a rotation(add a <code class="xref py py-class docutils literal notranslate"><span class="pre">src.hippo7_app.hippo7_backend.nodes.ModelMatrix</span></code>) or change the interpolation speed/function by adding a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">src.hippo7_app.hippo7_backend.nodes.ComplexFunction</span></code>.</p>
 </div>
 
 

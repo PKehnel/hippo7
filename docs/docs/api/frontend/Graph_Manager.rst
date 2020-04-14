@@ -12,7 +12,7 @@ Graph Manager
 -------------
 
 
-.. autoclass:: src.ui.graph_manager.GraphManager
+.. autoclass:: src.hippo7_app.hippo7_frontend.graph_manager.GraphManager
     :members:
 
 Observer Pattern
@@ -24,7 +24,7 @@ In this case the values from  different nodes in the backend are the subjects an
 
 ..  _observer pattern: https://en.wikipedia.org/wiki/Observer_pattern
 
-.. autoclass:: src.ui.graph_manager.Observable
+.. autoclass:: src.hippo7_app.hippo7_frontend.graph_manager.Observable
     :members:
 
 Backend Communication
@@ -34,7 +34,7 @@ In the following class the communication with the backend takes place. The inter
 functionality such as sending a updated node and handles first step en- and decoding.
 
 
-.. autoclass:: src.ui.backend_interface.BackendInterface
+.. autoclass:: src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface
     :members:
 
-.. autofunction:: src.ui.backend_interface.json_to_graph
+.. autofunction:: src.hippo7_app.hippo7_frontend.backend_interface.json_to_graph

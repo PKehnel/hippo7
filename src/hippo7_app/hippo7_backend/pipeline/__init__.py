@@ -1,4 +1,4 @@
-from renderer import get_asset_folder
+from hippo7_app.hippo7_backend import get_asset_folder
 
 geometry_folder = get_asset_folder() / "meshes"
 meshes = list(geometry_folder.glob("*.ply"))

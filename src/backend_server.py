@@ -3,13 +3,12 @@ from threading import Thread
 from glumpy import app
 from torch.cuda import is_available
 
-from renderer.graph_setup import complex_gan_setup  # noqa
-from renderer.graph_setup import debug_graph  # noqa
-from renderer.graph_setup import no_gan_setup  # noqa
-from renderer.graph_setup import simple_gan_setup
-from renderer.graph_setup import visualize_graph  # noqa
-from renderer.opengl.render import WindowManager
-from renderer.server import start_server
+from hippo7_app.hippo7_backend.graph_setup import complex_gan_setup  # noqa
+from hippo7_app.hippo7_backend.graph_setup import debug_graph  # noqa
+from hippo7_app.hippo7_backend.graph_setup import no_gan_setup  # noqa
+from hippo7_app.hippo7_backend.graph_setup import visualize_graph  # noqa
+from hippo7_app.hippo7_backend.opengl.render import WindowManager
+from hippo7_app.hippo7_backend.server import start_server
 
 model_type = "biggan-deep-512"
 fullscreen = False
@@ -36,7 +35,9 @@ WindowManager.bind_window(window)
 # generator = simple_gan_setup(model_type=model_type)
 # generator = no_gan_setup()
 generator = complex_gan_setup(model_type=model_type)
-visualize_graph(generator)
+
+# visualize_graph(generator)
+
 generator.to_device(get_device())
 
 

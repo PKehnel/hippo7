@@ -8,7 +8,7 @@ from pytorch_pretrained_biggan import one_hot_from_int
 from pytorch_pretrained_biggan import truncated_noise_sample
 from torch import nn
 
-from renderer import get_asset_folder
+from hippo7_app.hippo7_backend import get_asset_folder
 
 
 class BeatTimeMessage:

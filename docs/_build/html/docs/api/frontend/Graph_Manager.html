@@ -177,41 +177,41 @@
 <div class="section" id="id1">
 <h2>Graph Manager<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="src.ui.graph_manager.GraphManager">
-<em class="property">class </em><code class="sig-prename descclassname">src.ui.graph_manager.</code><code class="sig-name descname">GraphManager</code><span class="sig-paren">(</span><em class="sig-param">target='localhost'</em>, <em class="sig-param">port=8000</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.GraphManager" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.GraphManager">
+<em class="property">class </em><code class="sig-prename descclassname">src.hippo7_app.hippo7_frontend.graph_manager.</code><code class="sig-name descname">GraphManager</code><span class="sig-paren">(</span><em class="sig-param">target='localhost'</em>, <em class="sig-param">port=8000</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.GraphManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>The GraphManager handles the communication between frontend and backend. It stores the graph and propagates
 changes to listeners in the frontend as well as the backend.</p>
 <p>By default he retrieves a graph from the backend and turns the nodes into Observables and stores them
 in node_param dictionary.</p>
 <dl class="method">
-<dt id="src.ui.graph_manager.GraphManager.activate_preset">
-<code class="sig-name descname">activate_preset</code><span class="sig-paren">(</span><em class="sig-param">id: str</em>, <em class="sig-param">status: str</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.GraphManager.activate_preset" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.activate_preset">
+<code class="sig-name descname">activate_preset</code><span class="sig-paren">(</span><em class="sig-param">id: str</em>, <em class="sig-param">status: str</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.activate_preset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trigger all changes defined in a preset.
 :param id: Id of a preset.
 :param status: “On” / “Off” used for toggle presets.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.graph_manager.GraphManager.change_sending">
-<code class="sig-name descname">change_sending</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.GraphManager.change_sending" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.change_sending">
+<code class="sig-name descname">change_sending</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.change_sending" title="Permalink to this definition">¶</a></dt>
 <dd><p>To allow making multiple changes before sending, this can cache changes and send them all at once.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.graph_manager.GraphManager.graph_to_str">
-<code class="sig-name descname">graph_to_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.GraphManager.graph_to_str" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.graph_to_str">
+<code class="sig-name descname">graph_to_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.graph_to_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the graph in human readable form. This can be directly used as preset.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.graph_manager.GraphManager.map_types_to_nodes">
-<code class="sig-name descname">map_types_to_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.GraphManager.map_types_to_nodes" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.map_types_to_nodes">
+<code class="sig-name descname">map_types_to_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.map_types_to_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map the node behaviour to the nodes in the graph.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.graph_manager.GraphManager.set">
-<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">param_name</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.GraphManager.set" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">param_name</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.GraphManager.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Propagates changes to the observable node and the backend.
 :param node_name: Node name (id).
 :param param_name: The parameter of the node that changed.
@@ -226,8 +226,8 @@ in node_param dictionary.</p>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a> is a design pattern where a object, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.</p>
 <p>In this case the values from  different nodes in the backend are the subjects and the associated widgets are the observers.</p>
 <dl class="class">
-<dt id="src.ui.graph_manager.Observable">
-<em class="property">class </em><code class="sig-prename descclassname">src.ui.graph_manager.</code><code class="sig-name descname">Observable</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">value</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.Observable" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.Observable">
+<em class="property">class </em><code class="sig-prename descclassname">src.hippo7_app.hippo7_frontend.graph_manager.</code><code class="sig-name descname">Observable</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">value</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.Observable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements the observer pattern. All subscribes to the object will be notified about changes.
 Every call of set_value triggers a notify.</p>
 <dl class="field-list simple">
@@ -240,14 +240,14 @@ Every call of set_value triggers a notify.</p>
 </dd>
 </dl>
 <dl class="method">
-<dt id="src.ui.graph_manager.Observable.notify">
-<code class="sig-name descname">notify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.Observable.notify" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.Observable.notify">
+<code class="sig-name descname">notify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.Observable.notify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify all subscribed members about an updated value.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.graph_manager.Observable.set_value">
-<code class="sig-name descname">set_value</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.Observable.set_value" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.Observable.set_value">
+<code class="sig-name descname">set_value</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.Observable.set_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes local value and triggers notify.
 Values have to be changed using this method, otherwise notify will not be called.</p>
 <dl class="field-list simple">
@@ -258,8 +258,8 @@ Values have to be changed using this method, otherwise notify will not be called
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.graph_manager.Observable.subscribe">
-<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.graph_manager.Observable.subscribe" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.graph_manager.Observable.subscribe">
+<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.graph_manager.Observable.subscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subscribe to this node to get notified when the value gets changed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -276,18 +276,18 @@ Values have to be changed using this method, otherwise notify will not be called
 <p>In the following class the communication with the backend takes place. The interface mirrors the backend API and provides basic
 functionality such as sending a updated node and handles first step en- and decoding.</p>
 <dl class="class">
-<dt id="src.ui.backend_interface.BackendInterface">
-<em class="property">class </em><code class="sig-prename descclassname">src.ui.backend_interface.</code><code class="sig-name descname">BackendInterface</code><span class="sig-paren">(</span><em class="sig-param">address='lex'</em>, <em class="sig-param">port=8000</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.backend_interface.BackendInterface" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface">
+<em class="property">class </em><code class="sig-prename descclassname">src.hippo7_app.hippo7_frontend.backend_interface.</code><code class="sig-name descname">BackendInterface</code><span class="sig-paren">(</span><em class="sig-param">address='lex'</em>, <em class="sig-param">port=8000</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Establish to a server at the given address and port.</p>
 <dl class="method">
-<dt id="src.ui.backend_interface.BackendInterface.connect">
-<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param">address</em>, <em class="sig-param">port</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.backend_interface.BackendInterface.connect" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.connect">
+<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param">address</em>, <em class="sig-param">port</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect to a server with a given address &amp; port.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.backend_interface.BackendInterface.get_graph">
-<code class="sig-name descname">get_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.ui.backend_interface.BackendInterface.get_graph" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.get_graph">
+<code class="sig-name descname">get_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.get_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request the currently used graph from the backend.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -297,8 +297,8 @@ functionality such as sending a updated node and handles first step en- and deco
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.backend_interface.BackendInterface.get_node_behaviours">
-<code class="sig-name descname">get_node_behaviours</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.ui.backend_interface.BackendInterface.get_node_behaviours" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.get_node_behaviours">
+<code class="sig-name descname">get_node_behaviours</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.get_node_behaviours" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request the behaviour for all existing nodes from the backend.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -308,8 +308,8 @@ functionality such as sending a updated node and handles first step en- and deco
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.backend_interface.BackendInterface.set_node_value">
-<code class="sig-name descname">set_node_value</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">node_dict: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.backend_interface.BackendInterface.set_node_value" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.set_node_value">
+<code class="sig-name descname">set_node_value</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">node_dict: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.backend_interface.BackendInterface.set_node_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a message to the backend, with the name and values of a updated node.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -324,8 +324,8 @@ functionality such as sending a updated node and handles first step en- and deco
 </dd></dl>
 
 <dl class="function">
-<dt id="src.ui.backend_interface.json_to_graph">
-<code class="sig-prename descclassname">src.ui.backend_interface.</code><code class="sig-name descname">json_to_graph</code><span class="sig-paren">(</span><em class="sig-param">json_str: str) -&gt; (&lt;class 'dict'&gt;</em>, <em class="sig-param">&lt;class 'list'&gt;</em>, <em class="sig-param">&lt;class 'dict'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.backend_interface.json_to_graph" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.backend_interface.json_to_graph">
+<code class="sig-prename descclassname">src.hippo7_app.hippo7_frontend.backend_interface.</code><code class="sig-name descname">json_to_graph</code><span class="sig-paren">(</span><em class="sig-param">json_str: str) -&gt; (&lt;class 'dict'&gt;</em>, <em class="sig-param">&lt;class 'list'&gt;</em>, <em class="sig-param">&lt;class 'dict'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.backend_interface.json_to_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform a string (json message) containing the backend graph and presets to
 a graph and presets in frontend format.
 :param json_str: Backend graph as json string</p>

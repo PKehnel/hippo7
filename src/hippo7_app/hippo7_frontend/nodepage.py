@@ -6,15 +6,15 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.uix.widget import Widget
 
-from ui import graph_manager as manager
-from ui import specific_widgets
-from ui.widgets.custom_widgets import create_rv_data
-from ui.widgets.custom_widgets import NodeColor
-from ui.widgets.custom_widgets import NodeDisplay
-from ui.widgets.custom_widgets import NodeMultiWidget
-from ui.widgets.custom_widgets import NodeRV
-from ui.widgets.custom_widgets import NodeSlider
-from ui.widgets.custom_widgets import NodeSwitch
+from hippo7_app.hippo7_frontend import graph_manager as manager
+from hippo7_app.hippo7_frontend import specific_widgets
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import create_rv_data
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import NodeColor
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import NodeDisplay
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import NodeMultiWidget
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import NodeRV
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import NodeSlider
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import NodeSwitch
 
 
 class NodePage(manager.InputInterface, FloatLayout):

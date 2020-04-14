@@ -6,10 +6,10 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
-from ui.graph_manager import InputInterface
-from ui.widgets import get_project_root
-from ui.widgets.custom_widgets import create_rv_data
-from ui.widgets.custom_widgets import RV
+from hippo7_app.hippo7_frontend.graph_manager import InputInterface
+from hippo7_app.hippo7_frontend.widgets import get_project_root
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import create_rv_data
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import RV
 
 
 class DropDownWidget(BoxLayout):

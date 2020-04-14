@@ -28,7 +28,7 @@ Beneath that the currently selected node is displayed and presets are shown at t
 Furthermore the main page automatically generates the node pages at runtime according to the backend graph.
 See next paragraph `Node Pages`_.
 
-.. autoclass:: src.ui.ui_kivy.Hippo7Layout
+.. autoclass:: src.hippo7_app.hippo7_frontend.ui_kivy.Hippo7Layout
 
 .. _Node Pages:
 
@@ -42,7 +42,7 @@ String, Int, Double, Bool, Base2Int, Tupple(x,y), RGB
 
 For more specific nodes in the backend a custom widget has to be build, for example the :ref:`Class Selection <Class_Selection_Widget>`.
 
-.. automodule:: src.ui.nodepage
+.. automodule:: src.hippo7_app.hippo7_frontend.nodepage
     :members:
 
 Beat Detection and BPM Manager
@@ -52,7 +52,7 @@ The beat detection works in realtime and is based on librosa_.
 
 .. _librosa: https://librosa.github.io/librosa/
 
-.. autoclass:: src.ui.util.BeatDetector
+.. autoclass:: src.hippo7_app.hippo7_frontend.util.BeatDetector
     :members:
 
 In the app you can either configure the BPM manually, put it on autodetect or change it via tap detection

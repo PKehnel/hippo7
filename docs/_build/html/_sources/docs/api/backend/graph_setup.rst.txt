@@ -94,7 +94,7 @@ window and server. Congratulations! If you run the ``render_server.py`` you shou
 
 Note that the .gif is not a perfect loop.
 
-Our graph looks as follows(plotted with :py:func:`src.renderer.graph_setup.visualize_graph`:
+Our graph looks as follows(plotted with :py:func:`src.hippo7_app.hippo7_backend.graph_setup.visualize_graph`:
 
 
 
@@ -103,7 +103,7 @@ Our graph looks as follows(plotted with :py:func:`src.renderer.graph_setup.visua
 
 
 We can now add numerous more effects: For example, we could change the mesh(simply change the line ``mesh="quad",``,
-add a rotation(add a :py:class:`src.renderer.nodes.ModelMatrix`) or change the interpolation speed/function by adding a
-:py:class:`src.renderer.nodes.ComplexFunction`.
+add a rotation(add a :py:class:`src.hippo7_app.hippo7_backend.nodes.ModelMatrix`) or change the interpolation speed/function by adding a
+:py:class:`src.hippo7_app.hippo7_backend.nodes.ComplexFunction`.
 
 

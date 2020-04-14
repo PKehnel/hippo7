@@ -188,8 +188,8 @@ Beneath that the currently selected node is displayed and presets are shown at t
 <p>Furthermore the main page automatically generates the node pages at runtime according to the backend graph.
 See next paragraph <a class="reference internal" href="#node-pages">Node Pages</a>.</p>
 <dl class="class">
-<dt id="src.ui.ui_kivy.Hippo7Layout">
-<em class="property">class </em><code class="sig-prename descclassname">src.ui.ui_kivy.</code><code class="sig-name descname">Hippo7Layout</code><span class="sig-paren">(</span><em class="sig-param">config=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.ui_kivy.Hippo7Layout" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.ui_kivy.Hippo7Layout">
+<em class="property">class </em><code class="sig-prename descclassname">src.hippo7_app.hippo7_frontend.ui_kivy.</code><code class="sig-name descname">Hippo7Layout</code><span class="sig-paren">(</span><em class="sig-param">config=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.ui_kivy.Hippo7Layout" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Initialize the main layout of the app, consisting off:</dt><dd><ul class="simple">
 <li><p>Play / Pause Button</p></li>
@@ -220,9 +220,9 @@ See next paragraph <a class="reference internal" href="#node-pages">Node Pages</
 follow the <a class="reference internal" href="../backend/rendergraph.html#types"><span class="std std-ref">type conventions</span></a> specified in the backend. Currently supported parameter types include:</p>
 <p>String, Int, Double, Bool, Base2Int, Tupple(x,y), RGB</p>
 <p>For more specific nodes in the backend a custom widget has to be build, for example the <a class="reference internal" href="widgets.html#class-selection-widget"><span class="std std-ref">Class Selection</span></a>.</p>
-<span class="target" id="module-src.ui.nodepage"></span><dl class="class">
-<dt id="src.ui.nodepage.NodePage">
-<em class="property">class </em><code class="sig-prename descclassname">src.ui.nodepage.</code><code class="sig-name descname">NodePage</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">node_name</em>, <em class="sig-param">graph_manager</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-src.hippo7_app.hippo7_frontend.nodepage"></span><dl class="class">
+<dt id="src.hippo7_app.hippo7_frontend.nodepage.NodePage">
+<em class="property">class </em><code class="sig-prename descclassname">src.hippo7_app.hippo7_frontend.nodepage.</code><code class="sig-name descname">NodePage</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">node_name</em>, <em class="sig-param">graph_manager</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.nodepage.NodePage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a page for a specific graph node. Thereby add a widget for each parameter according to the value type:
 Currently supported types:</p>
 <blockquote>
@@ -247,8 +247,8 @@ Incoming changes will be handled in the update_observable function.</p>
 </dd>
 </dl>
 <dl class="method">
-<dt id="src.ui.nodepage.NodePage.create_widget">
-<code class="sig-name descname">create_widget</code><span class="sig-paren">(</span><em class="sig-param">name: str</em>, <em class="sig-param">widget: kivy.uix.widget.Widget</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage.create_widget" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.nodepage.NodePage.create_widget">
+<code class="sig-name descname">create_widget</code><span class="sig-paren">(</span><em class="sig-param">name: str</em>, <em class="sig-param">widget: kivy.uix.widget.Widget</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.nodepage.NodePage.create_widget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a widget Box for one parameter, possible including multiple sub widgets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -261,8 +261,8 @@ Incoming changes will be handled in the update_observable function.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.nodepage.NodePage.generate_generic_widget">
-<code class="sig-name descname">generate_generic_widget</code><span class="sig-paren">(</span><em class="sig-param">type_specs=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">name: str = ''</em>, <em class="sig-param">set_value=None</em><span class="sig-paren">)</span> &#x2192; kivy.uix.widget.Widget<a class="headerlink" href="#src.ui.nodepage.NodePage.generate_generic_widget" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.nodepage.NodePage.generate_generic_widget">
+<code class="sig-name descname">generate_generic_widget</code><span class="sig-paren">(</span><em class="sig-param">type_specs=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">name: str = ''</em>, <em class="sig-param">set_value=None</em><span class="sig-paren">)</span> &#x2192; kivy.uix.widget.Widget<a class="headerlink" href="#src.hippo7_app.hippo7_frontend.nodepage.NodePage.generate_generic_widget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a generic widget depending on the type, with the possible for minor specifications.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -279,8 +279,8 @@ Incoming changes will be handled in the update_observable function.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.nodepage.NodePage.generate_specific_widget">
-<code class="sig-name descname">generate_specific_widget</code><span class="sig-paren">(</span><em class="sig-param">type_specs=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">name: str = ''</em>, <em class="sig-param">attributes=None</em><span class="sig-paren">)</span> &#x2192; kivy.uix.widget.Widget<a class="headerlink" href="#src.ui.nodepage.NodePage.generate_specific_widget" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.nodepage.NodePage.generate_specific_widget">
+<code class="sig-name descname">generate_specific_widget</code><span class="sig-paren">(</span><em class="sig-param">type_specs=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">name: str = ''</em>, <em class="sig-param">attributes=None</em><span class="sig-paren">)</span> &#x2192; kivy.uix.widget.Widget<a class="headerlink" href="#src.hippo7_app.hippo7_frontend.nodepage.NodePage.generate_specific_widget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a widget that is more complex then the general widgets and has its own set up.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -298,15 +298,15 @@ Incoming changes will be handled in the update_observable function.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.nodepage.NodePage.modify_set">
-<code class="sig-name descname">modify_set</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">param_name</em>, <em class="sig-param">value</em>, <em class="sig-param">value_type: type = &lt;class 'int'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage.modify_set" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.nodepage.NodePage.modify_set">
+<code class="sig-name descname">modify_set</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">param_name</em>, <em class="sig-param">value</em>, <em class="sig-param">value_type: type = &lt;class 'int'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.nodepage.NodePage.modify_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Slightly modified version of the InputInterface.set.
 This allows to define the type of value.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="src.ui.nodepage.NodePage.update_observable">
-<code class="sig-name descname">update_observable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage.update_observable" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.nodepage.NodePage.update_observable">
+<code class="sig-name descname">update_observable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.nodepage.NodePage.update_observable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the value of a widget, if changes from the graph manager are communicated,
 :param *args:
 :param **kwargs: Contains a specific widget name and the updated value.</p>
@@ -319,8 +319,8 @@ This allows to define the type of value.</p>
 <h2>Beat Detection and BPM Manager<a class="headerlink" href="#beat-detection-and-bpm-manager" title="Permalink to this headline">¶</a></h2>
 <p>The beat detection works in realtime and is based on <a class="reference external" href="https://librosa.github.io/librosa/">librosa</a>.</p>
 <dl class="class">
-<dt id="src.ui.util.BeatDetector">
-<em class="property">class </em><code class="sig-prename descclassname">src.ui.util.</code><code class="sig-name descname">BeatDetector</code><span class="sig-paren">(</span><em class="sig-param">sample_rate=44100</em>, <em class="sig-param">length=8</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.util.BeatDetector" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.util.BeatDetector">
+<em class="property">class </em><code class="sig-prename descclassname">src.hippo7_app.hippo7_frontend.util.</code><code class="sig-name descname">BeatDetector</code><span class="sig-paren">(</span><em class="sig-param">sample_rate=44100</em>, <em class="sig-param">length=8</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.util.BeatDetector" title="Permalink to this definition">¶</a></dt>
 <dd><p>The BeatDetector as the name claims, handles the beat detection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -332,8 +332,8 @@ This allows to define the type of value.</p>
 </dd>
 </dl>
 <dl class="method">
-<dt id="src.ui.util.BeatDetector.detect_beat">
-<code class="sig-name descname">detect_beat</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.util.BeatDetector.detect_beat" title="Permalink to this definition">¶</a></dt>
+<dt id="src.hippo7_app.hippo7_frontend.util.BeatDetector.detect_beat">
+<code class="sig-name descname">detect_beat</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.hippo7_app.hippo7_frontend.util.BeatDetector.detect_beat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detects the current BPM if there are enough samples currently in the stream. A longer blocksize results in a
 more accurate estimation.</p>
 <dl class="field-list simple">

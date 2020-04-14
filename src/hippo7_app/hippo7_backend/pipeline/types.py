@@ -4,7 +4,7 @@ from copy import copy
 import torch
 from torch import Tensor as TorchTensor
 
-from renderer.pipeline.nodes_util import BeatTimeMessage
+from hippo7_app.hippo7_backend.pipeline.nodes_util import BeatTimeMessage
 
 
 class Ntype:

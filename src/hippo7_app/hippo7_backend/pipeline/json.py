@@ -8,14 +8,14 @@ import numpy as np
 import torch
 from pydantic import BaseModel
 
-import renderer.pipeline.nodes as N
-from renderer.pipeline.graph import Node
-from renderer.pipeline.graph import NodeInput
-from renderer.pipeline.graph import NodeOutput
-from renderer.pipeline.graph import Preset
-from renderer.pipeline.graph import RenderGraph
-from renderer.pipeline.graph import TogglePreset
-from renderer.pipeline.types import Ntype
+import hippo7_app.hippo7_backend.pipeline.nodes as N
+from hippo7_app.hippo7_backend.pipeline.graph import NodeInput
+from hippo7_app.hippo7_backend.pipeline.graph import NodeOutput
+from hippo7_app.hippo7_backend.pipeline.graph import Preset
+from hippo7_app.hippo7_backend.pipeline.graph import RenderGraph
+from hippo7_app.hippo7_backend.pipeline.graph import TogglePreset
+from hippo7_app.hippo7_backend.pipeline.types import Ntype
+from hippo7_app.hippo7_backend.pipeline.graph import Node
 
 
 class NodeMessage(BaseModel):

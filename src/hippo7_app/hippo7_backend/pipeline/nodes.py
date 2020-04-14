@@ -12,24 +12,19 @@ from glumpy import gl
 from glumpy import glm
 from glumpy import gloo
 
-from renderer import get_asset_folder
-from renderer.opengl.geometry import correctly_rotated_model_matrix
-from renderer.opengl.geometry import load_file
-from renderer.opengl.geometry import to_tex_format
-from renderer.opengl.render import WindowManager
-from renderer.opengl.shaders import get_shader
-from renderer.pipeline import mesh_dict
-from renderer.pipeline import song_dict
-from renderer.pipeline.graph import Node
-from renderer.pipeline.graph import NodeInput
-from renderer.pipeline.graph import NodeOutput
-from renderer.pipeline.graph import T
-from renderer.pipeline.nodes_util import BeatTimeMessage
-from renderer.pipeline.nodes_util import create_class_vector
-from renderer.pipeline.nodes_util import create_noise_vector
-from renderer.pipeline.nodes_util import generate_model_file
-from renderer.pipeline.nodes_util import time_generator
-from renderer.pipeline.nodes_util import toNumpy
+from hippo7_app.hippo7_backend import get_asset_folder
+from hippo7_app.hippo7_backend.opengl.geometry import correctly_rotated_model_matrix, to_tex_format, load_file
+from hippo7_app.hippo7_backend.opengl.render import WindowManager
+from hippo7_app.hippo7_backend.opengl.shaders import get_shader
+from hippo7_app.hippo7_backend.pipeline import song_dict, mesh_dict
+from hippo7_app.hippo7_backend.pipeline.graph import Node
+from hippo7_app.hippo7_backend.pipeline.graph import NodeInput
+from hippo7_app.hippo7_backend.pipeline.graph import NodeOutput
+from hippo7_app.hippo7_backend.pipeline.graph import T
+from hippo7_app.hippo7_backend.pipeline.nodes_util import BeatTimeMessage, create_noise_vector, create_class_vector, \
+    generate_model_file, toNumpy
+
+from hippo7_app.hippo7_backend.pipeline.nodes_util import time_generator
 
 
 class DrawNode(Node):
@@ -68,7 +63,7 @@ class DrawNode(Node):
 class RecordingDrawNode(Node):
     """
         The recording draw node is the a final node in a graph to both display and record
-        something. All three inputs facesm shader and window must be connected.
+        something. All three inputs faces, shader and window must be connected.
 
         Inputs:
             faces:

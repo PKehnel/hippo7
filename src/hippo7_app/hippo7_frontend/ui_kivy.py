@@ -7,12 +7,12 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.togglebutton import ToggleButton
 
-import ui.graph_manager as manager
-from ui.nodepage import NodePage
-from ui.util import get_color
-from ui.widgets.bpm_widget import BPMManager
-from ui.widgets.bpm_widget import GlobalBPMWidget
-from ui.widgets.custom_widgets import CustomToggleButton
+import hippo7_app.hippo7_frontend.graph_manager as manager
+from hippo7_app.hippo7_frontend.nodepage import NodePage
+from hippo7_app.hippo7_frontend.util import get_color
+from hippo7_app.hippo7_frontend.widgets.bpm_widget import BPMManager
+from hippo7_app.hippo7_frontend.widgets.bpm_widget import GlobalBPMWidget
+from hippo7_app.hippo7_frontend.widgets.custom_widgets import CustomToggleButton
 
 
 class Hippo7Layout(manager.InputInterface, FloatLayout):

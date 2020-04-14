@@ -1,10 +1,10 @@
 from graphviz import Digraph
 
-import renderer.pipeline.nodes as N
-from renderer.pipeline.graph import NodeOutput
-from renderer.pipeline.graph import Preset
-from renderer.pipeline.graph import RenderGraph
-from renderer.pipeline.graph import TogglePreset
+import hippo7_app.hippo7_backend.pipeline.nodes as N
+from hippo7_app.hippo7_backend.pipeline.graph import NodeOutput
+from hippo7_app.hippo7_backend.pipeline.graph import Preset
+from hippo7_app.hippo7_backend.pipeline.graph import RenderGraph
+from hippo7_app.hippo7_backend.pipeline.graph import TogglePreset
 
 
 def visualize_graph(graph, name="graphviz_graph"):
@@ -265,7 +265,7 @@ def complex_gan_setup(model_type="biggan-deep-128"):
                 "class_timing.single_beat_length": 32.0,
                 "class_timing.function": "x**y",
                 "class_timing.y": 1.0,
-                "noise_sampler.sample_options": "ComplexRotation",
+                "noise_sampler.sample_options": "Complex Rotation",
                 "noise_sampler.rotation_speed": 0.03,
                 "noise_sampler.truncation": 1.0,
             }
@@ -275,7 +275,7 @@ def complex_gan_setup(model_type="biggan-deep-128"):
         "Fast_Snappy_Noise",
         Preset(
             {
-                "noise_sampler.sample_options": "PingPong",
+                "noise_sampler.sample_options": "Ping Pong",
                 "noise_sampler.rotation_speed": 0.1,
                 "noise_sampler.truncation": 0.5,
                 "noise_timing.single_beat_length": 1.0,

@@ -47,7 +47,7 @@ You can find all currently used meshes in ``assets/meshes``.
 
 
 
-.. autofunction:: src.renderer.opengl.geometry.load_file
+.. autofunction:: src.hippo7_app.hippo7_backend.opengl.geometry.load_file
 
 Shader
 ------

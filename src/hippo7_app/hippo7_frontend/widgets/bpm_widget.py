@@ -8,8 +8,8 @@ from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 
-from ui.graph_manager import InputInterface
-from ui.util import BeatDetector
+from hippo7_app.hippo7_frontend.graph_manager import InputInterface
+from hippo7_app.hippo7_frontend.util import BeatDetector
 
 
 class GlobalBPMWidget(InputInterface, BoxLayout):

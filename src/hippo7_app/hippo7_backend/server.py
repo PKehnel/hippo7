@@ -2,8 +2,8 @@ import socket
 from http.server import BaseHTTPRequestHandler
 from http.server import HTTPServer
 
-import renderer.pipeline.json as js
-from renderer.pipeline.json import SetValueMessage
+import hippo7_app.hippo7_backend.pipeline.json as js
+from hippo7_app.hippo7_backend.pipeline.json import SetValueMessage
 
 
 def get_ip():

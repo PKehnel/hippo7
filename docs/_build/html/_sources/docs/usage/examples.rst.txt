@@ -16,7 +16,7 @@ Basic setup
 
 The simplest and minimal setup you can run out of the box is described in the:
 
-.. autofunction:: src.renderer.graph_setup.simple_gan_setup
+.. function:: src.hippo7_app/hippo7_backend.graph_setup.simple_gan_setup
 
 .. image:: /docs/assets/images/simple_gan.gif
 
@@ -27,7 +27,7 @@ If you run the server using this for your graph generation, it will give you a g
 
 **Hint:** You can always generate a graph visualisation like above by calling
 
-.. autofunction:: src.renderer.graph_setup.visualize_graph
+.. function:: src.hippo7_app/hippo7_backend.graph_setup.visualize_graph
 
 
 
@@ -37,7 +37,7 @@ Advanced setup
 --------------
 A more advanced configuration can be used with:
 
-.. autofunction:: src.renderer.graph_setup.no_gan_setup
+.. function:: src.hippo7_app/hippo7_backend.graph_setup.no_gan_setup
 
 .. raw:: html
 
@@ -57,7 +57,7 @@ Alternative input
 There is nothing enforcing you to use BigGan as image input.
 You can also run the setup without any visuals, as shown in the following example:
 
-.. autofunction:: src.renderer.graph_setup.no_gan_setup
+.. function:: src.hippo7_app/hippo7_backend.graph_setup.no_gan_setup
 
 .. image:: /docs/assets/images/nogan.gif
 
