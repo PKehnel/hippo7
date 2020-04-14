@@ -175,3 +175,5 @@ fabric.properties
 assets/videos
 assets/audio
 assets/networks
+/src/graphviz_graph.gv
+/src/graphviz_graph.gv.pdf
