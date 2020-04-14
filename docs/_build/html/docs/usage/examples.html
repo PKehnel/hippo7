@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Examples &mdash; Hippo7 01.04.2020 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Building your graph" href="../api/backend/graph_setup.html" />
+    <link rel="prev" title="Getting Started" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Hippo7
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing Hippo7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-setup">Basic setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-setup">Advanced setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-input">Alternative input</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/graph_setup.html">Building your graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/rendergraph.html">The RenderGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/existing_nodes.html">Existing Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/opengl.html">Open GL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/frontend/Graph_Manager.html">Graph Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/frontend/kivy_app.html">The Hippo7 App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/frontend/widgets.html">Widgets</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Hippo7</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/usage/examples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#basic-setup" id="id2">Basic setup</a></p></li>
+<li><p><a class="reference internal" href="#advanced-setup" id="id3">Advanced setup</a></p></li>
+<li><p><a class="reference internal" href="#alternative-input" id="id4">Alternative input</a></p></li>
+</ul>
+</div>
+<div class="section" id="basic-setup">
+<h2>Basic setup<a class="headerlink" href="#basic-setup" title="Permalink to this headline">¶</a></h2>
+<p>The simplest and minimal setup you can run out of the box is described in the:</p>
+<dl class="function">
+<dt id="src.renderer.graph_setup.simple_gan_setup">
+<code class="sig-prename descclassname">src.renderer.graph_setup.</code><code class="sig-name descname">simple_gan_setup</code><span class="sig-paren">(</span><em class="sig-param">model_type='biggan-deep-128'</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.graph_setup.simple_gan_setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<img alt="../../_images/simple_gan.gif" src="../../_images/simple_gan.gif" />
+<p>If you run the server using this for your graph generation, it will give you a graph looking like this:</p>
+<div class="graphviz"><img src="../../_images/graphviz-3a5b4b9547c8622cc116932ce843ce317daa88f8.png" alt="digraph simple_graph {
+	node [shape=circle]
+	window [label=window]
+	node [shape=doublecircle]
+	bpm_clock [label=bpm_clock]
+	node [shape=circle]
+	class_pool [label=class_pool]
+	node [shape=circle]
+	class_sampler [label=class_sampler]
+	node [shape=circle]
+	class [label=class]
+	node [shape=doublecircle]
+	biggan [label=biggan]
+	node [shape=doublecircle]
+	shader [label=shader]
+	node [shape=doublecircle]
+	geo [label=geo]
+	node [shape=doublecircle]
+	draw [label=draw]
+	class_pool -&gt; class_sampler [label=class_pool]
+	bpm_clock -&gt; class [label=time]
+	class_sampler -&gt; class [label=sampler]
+	class -&gt; biggan [label=class_vector]
+	shader -&gt; geo [label=shader]
+	biggan -&gt; geo [label=texture]
+	window -&gt; geo [label=window_size]
+	geo -&gt; draw [label=faces]
+	shader -&gt; draw [label=shader]
+	window -&gt; draw [label=window]
+}" class="graphviz" /></div>
+<p><strong>Hint:</strong> You can always generate a graph visualisation like above by calling</p>
+<dl class="function">
+<dt id="src.renderer.graph_setup.visualize_graph">
+<code class="sig-prename descclassname">src.renderer.graph_setup.</code><code class="sig-name descname">visualize_graph</code><span class="sig-paren">(</span><em class="sig-param">graph</em>, <em class="sig-param">name='graphviz_graph'</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.graph_setup.visualize_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="advanced-setup">
+<span id="id1"></span><h2>Advanced setup<a class="headerlink" href="#advanced-setup" title="Permalink to this headline">¶</a></h2>
+<p>A more advanced configuration can be used with:</p>
+<dl class="function">
+<dt id="src.renderer.graph_setup.no_gan_setup">
+<code class="sig-prename descclassname">src.renderer.graph_setup.</code><code class="sig-name descname">no_gan_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.graph_setup.no_gan_setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TIPJwD7XZ6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>This is actually the setup we also used at a live performance so dont feel bad, if you are overwhelmed in the beginning.</p>
+<p>Here you have a almost endless variety of options. Some parts like the functions are a not directly understandable,
+this is a direct trade off for the automatic generated frontend.</p>
+</div>
+<div class="section" id="alternative-input">
+<h2>Alternative input<a class="headerlink" href="#alternative-input" title="Permalink to this headline">¶</a></h2>
+<p>There is nothing enforcing you to use BigGan as image input.
+You can also run the setup without any visuals, as shown in the following example:</p>
+<dl class="function">
+<dt>
+<code class="sig-prename descclassname">src.renderer.graph_setup.</code><code class="sig-name descname">no_gan_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<img alt="../../_images/nogan.gif" src="../../_images/nogan.gif" />
+<p>You could also always build your own graph(as described in <a class="reference internal" href="../api/backend/graph_setup.html"><span class="doc">Building your graph</span></a>) with your own custom
+nodes as input(as seen in <a class="reference internal" href="../api/backend/rendergraph.html#new-nodes"><span class="std std-ref">Creating New Nodes</span></a>).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api/backend/graph_setup.html" class="btn btn-neutral float-right" title="Building your graph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Benedikt Wiberg, Paul Kehnel
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The RenderGraph &mdash; Hippo7 01.04.2020 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Existing Nodes" href="existing_nodes.html" />
+    <link rel="prev" title="Building your graph" href="graph_setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Hippo7
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/installation.html">Installing Hippo7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="graph_setup.html">Building your graph</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The RenderGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#graph">Graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#presets">Presets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#nodes">Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-new-nodes">Creating New Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inputs-and-outputs">Inputs and Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#types">Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="existing_nodes.html">Existing Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opengl.html">Open GL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/Graph_Manager.html">Graph Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/kivy_app.html">The Hippo7 App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/widgets.html">Widgets</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Hippo7</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>The RenderGraph</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/docs/api/backend/rendergraph.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-rendergraph">
+<h1>The RenderGraph<a class="headerlink" href="#the-rendergraph" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#graph" id="id5">Graph</a></p></li>
+<li><p><a class="reference internal" href="#nodes" id="id6">Nodes</a></p></li>
+<li><p><a class="reference internal" href="#types" id="id7">Types</a></p></li>
+</ul>
+</div>
+<p>The <a class="reference internal" href="#rendergraph">RenderGraph</a> is the <em>heart of hippo7</em>. It works similar to a <a class="reference external" href="https://en.wikipedia.org/wiki/Flow-based_programming">flow based programming</a> approach. Basically, you first need
+to construct a graph that declares the flow of data between numerous nodes that each compute some part of the renderer. Afterwards,
+the graph is run for every frame, where every node is run exactly once. While the actual computation is run backwards from the last node,
+requesting computation of all needed inputs on the fly, it is easier to think of every node by itself and just assume that all inputs
+are already correct for this time step/frame.</p>
+<div class="section" id="graph">
+<h2>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h2>
+<p>The Graph itself is a wrapping data structure that allows at runtime manipulation of some of its values.</p>
+<span class="target" id="rendergraph"></span><dl class="class">
+<dt id="src.renderer.pipeline.graph.RenderGraph">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.graph.</code><code class="sig-name descname">RenderGraph</code><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>The RenderGraph is the data structure containing all nodes that make up the
+frame-generation process. Nodes can be added using graph.add_node(node, name). The
+frame-generation process is triggered by calling graph.draw(), where the whole
+graph gets executed from the back, e. g. it starts with the last node(usually a
+DrawNode) and then calls all other nodes by referencing their inputs.</p>
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.add_node">
+<code class="sig-name descname">add_node</code><span class="sig-paren">(</span><em class="sig-param">node: src.renderer.pipeline.graph.Node</em>, <em class="sig-param">name: str</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a node to the graph. It is more advisable to use the dict setitem
+syntax instead. (Example: graph[name] = node)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – The node to be added.</p></li>
+<li><p><strong>name</strong> – The name or id the node should be referenced as.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.add_preset">
+<code class="sig-name descname">add_preset</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">preset: src.renderer.pipeline.graph.Preset</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.add_preset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a preset to the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>preset_name</strong> – The name of the preset to be used as a display name and lookup value.</p></li>
+<li><p><strong>preset</strong> – The preset object containing all the information about which values should be changed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.default_inputs">
+<code class="sig-name descname">default_inputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, src.renderer.pipeline.graph.DefaultValue]<a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.default_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all NodeInputs that are bound to a value and not a NodeOutput.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dict of DefaultValues.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a single frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.draw_node">
+<code class="sig-name descname">draw_node</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.draw_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Name/Id/Key of the draw node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Name of the DrawNode.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.draw_without_update">
+<code class="sig-name descname">draw_without_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.draw_without_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws without updating any of the values. This results in the same output if
+called consecutively.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.inputs">
+<code class="sig-name descname">inputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all NodeInputs for all Nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>All NodeInputs for the graph, so this method does not differentiate
+between Inputs bound to DefaultValues or NodeOutputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.nodes">
+<code class="sig-name descname">nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, src.renderer.pipeline.graph.Node]<a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all nodes from the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>All Nodes as a dict, mapping the name to the node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.outputs">
+<code class="sig-name descname">outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all NodeOutputs for all Nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>All NodeOutputs existing in the graph as a dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.set_draw_node">
+<code class="sig-name descname">set_draw_node</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.set_draw_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the draw node to a certain node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – Name/Id/Key of the draw node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.set_from_preset">
+<code class="sig-name descname">set_from_preset</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.set_from_preset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the graph NodeInputs to the values specified in the preset that has
+been added under the name ‘preset_name’.
+self.presets[str(key)] = preset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>preset_name</strong> – The lookup key for the preset.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The set/changed values. These are relevant for  correct display in the
+frontend.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.RenderGraph.to_device">
+<code class="sig-name descname">to_device</code><span class="sig-paren">(</span><em class="sig-param">device</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.RenderGraph.to_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves data/computation to different devices, typically either ‘cuda’ or ‘cpu’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device</strong> – Name of the device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="presets">
+<h3>Presets<a class="headerlink" href="#presets" title="Permalink to this headline">¶</a></h3>
+<p>An important concept for the actual performance using a graph are Presets. Presets can be added to a Graph and allow the
+quick change if multiple node inputs(so called <a class="reference internal" href="#defaultvalues">DefaultValues</a>).</p>
+<span class="target" id="preset"></span><dl class="class">
+<dt id="src.renderer.pipeline.graph.Preset">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.graph.</code><code class="sig-name descname">Preset</code><span class="sig-paren">(</span><em class="sig-param">values: Dict[str, Any]</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.Preset" title="Permalink to this definition">¶</a></dt>
+<dd><p>A preset is a preset of values for DefaultValues to quickly change the current output
+of the RenderGraph. In essence, it allows us to change multiple values at once, toggle
+values and similar things.</p>
+<p>Initialize a preset with a dict of values that should be changed all together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>values</strong> – A dict of values where each entry is in the form of
+“nodename.fieldname”: value</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.Preset.apply">
+<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">nodes: Dict[str, src.renderer.pipeline.graph.Node]</em><span class="sig-paren">)</span> &#x2192; Dict[str, Any]<a class="headerlink" href="#src.renderer.pipeline.graph.Preset.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the changes of the preset to the nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nodes</strong> – The node dict of a graph.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The changed values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="togglepreset"></span><dl class="class">
+<dt id="src.renderer.pipeline.graph.TogglePreset">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.graph.</code><code class="sig-name descname">TogglePreset</code><span class="sig-paren">(</span><em class="sig-param">on: Dict[str, Any], off: Dict[str, Any]</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.TogglePreset" title="Permalink to this definition">¶</a></dt>
+<dd><p>A preset is a preset of values for DefaultValues to quickly change the current output
+of the RenderGraph. In essence, it allows us to change multiple values at once, toggle
+values and similar things.
+In comparison to the normal Preset, the TogglePreset has both an on and off preset
+to simulate a toggling option(basically allow the activation/deactivation of an effect).</p>
+<p>Initialize a preset with two dicts of values that should be toggled. (The
+first call starts with the on dict)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>on</strong> – A dict of values where each entry is in the form of
+“nodename.fieldname”: value</p></li>
+<li><p><strong>off</strong> – A dict of values where each entry is in the form of
+“nodename.fieldname”: value</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.TogglePreset.apply">
+<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">nodes: Dict[str, src.renderer.pipeline.graph.Node]</em><span class="sig-paren">)</span> &#x2192; Dict[str, Any]<a class="headerlink" href="#src.renderer.pipeline.graph.TogglePreset.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the changes of the preset to the nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nodes</strong> – The node dict of a graph.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The changed values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="nodes">
+<h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
+<p>Nodes are simple computation units in the <a class="reference internal" href="#rendergraph">RenderGraph</a> and are all implementations of the same node class.</p>
+<span class="target" id="id1"></span><dl class="class">
+<dt id="src.renderer.pipeline.graph.Node">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.graph.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param">**kwargs: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Node is the the base class for all nodes that make up a part of a RenderGraph.
+To create a new Node, the Inputs should be specified as class attributes using
+NodeInputs, the Outputs similarly as NodeOutputs. Additionally the update() method
+needs to be implemented, which will control the update of the outputs based on the
+inputs. It will be called every frame.</p>
+<p>The init method sets all input edges to values based on the <a href="#id2"><span class="problematic" id="id3">**</span></a>kwargs.</p>
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.Node.bind">
+<code class="sig-name descname">bind</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.Node.bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds either a value or NodeOutput to an input edge, which allows it to be
+either update-called in the update process or changed from the frontend.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.Node.inputs">
+<code class="sig-name descname">inputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, src.renderer.pipeline.graph.NodeInput]<a class="headerlink" href="#src.renderer.pipeline.graph.Node.inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all inputs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.Node.outputs">
+<code class="sig-name descname">outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.Node.outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all outputs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.Node.to_device">
+<code class="sig-name descname">to_device</code><span class="sig-paren">(</span><em class="sig-param">device</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.Node.to_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Certain nodes interact heavily with the GPU, but not all machines support those.
+You can use to_device to switch the computations/data to some other device.
+(In most cases this is either ‘cpu’ or ‘cuda’)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.Node.trigger_update">
+<code class="sig-name descname">trigger_update</code><span class="sig-paren">(</span><em class="sig-param">frame: int</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.Node.trigger_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trigger_update method guarantees that update will not be called more than
+once per frame. It should be called instead of update() directly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.Node.update">
+<em class="property">abstract </em><code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.Node.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update needs to be overwritten by the children class. It should contain all
+computations based on some input and their assignments to the proper outputs.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="creating-new-nodes">
+<span id="new-nodes"></span><h3>Creating New Nodes<a class="headerlink" href="#creating-new-nodes" title="Permalink to this headline">¶</a></h3>
+<p>To create a new custom node, simply follow the this template:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">from renderer.pipeline.graph import Node, NodeInput, NodeOutput</span>
+<span class="go">import renderer.pipeline.types as T</span>
+
+<span class="go">class ComplexFunction(Node):</span>
+<span class="go">    firstInput = NodeInput(1.0, ntype=T.Float(-100, 100))</span>
+<span class="go">    secondInput = NodeInput(1.0)</span>
+
+<span class="go">    output = NodeOutput(ntype=T.Float())</span>
+
+<span class="go">    def update(self):</span>
+<span class="go">        output = firstInput + secondInput</span>
+</pre></div>
+</div>
+<p>Basically, you first define the inputs and outputs as class attributes. Note that you can specify the type of the input,
+but for some simple types its automatically inferred from the value itself.
+Then, you define a custom update method that calculates the output from the inputs.
+Afterwards, when creating the graph itself, the values specified in the inputs are converted to <a class="reference internal" href="#defaultvalues">DefaultValues</a> if not set
+to the <a class="reference internal" href="#nodeoutput">NodeOutput</a> of another Node. For more complex examples it is advisable to look into already existing nodes.</p>
+</div>
+<div class="section" id="inputs-and-outputs">
+<h3>Inputs and Outputs<a class="headerlink" href="#inputs-and-outputs" title="Permalink to this headline">¶</a></h3>
+<p>Every node is made of inputs and outputs, that are connected to other Inputs/Outputs or are <a class="reference internal" href="#defaultvalues">DefaultValues</a>.</p>
+<span class="target" id="nodeoutput"></span><dl class="class">
+<dt id="src.renderer.pipeline.graph.NodeOutput">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.graph.</code><code class="sig-name descname">NodeOutput</code><span class="sig-paren">(</span><em class="sig-param">value: Any = None</em>, <em class="sig-param">attached_node: object = None</em>, <em class="sig-param">ntype: renderer.pipeline.types.Ntype = None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.NodeOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>The NodeOutput is the container class for all output edges of a Node and should be
+set as a class attribute in the Node. It is later used as an connection for the
+NodeInputs.</p>
+<p>The init method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The inital default value for the output.</p></li>
+<li><p><strong>attached_node</strong> – The node that this NodeOutput is a part of.</p></li>
+<li><p><strong>ntype</strong> – The ntype specifies which kind of output this edge represents.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.NodeOutput.attach">
+<code class="sig-name descname">attach</code><span class="sig-paren">(</span><em class="sig-param">attached_node: object</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.NodeOutput.attach" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to set the attached node at a later date than initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attached_node</strong> – A node object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="nodeinput"></span><dl class="class">
+<dt id="src.renderer.pipeline.graph.NodeInput">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.graph.</code><code class="sig-name descname">NodeInput</code><span class="sig-paren">(</span><em class="sig-param">value: Any = None</em>, <em class="sig-param">ntype: renderer.pipeline.types.Ntype = None</em>, <em class="sig-param">pre_bind_hook: Callable = None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.NodeInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>The NodeInput represents an input for a node and should be set as a class attribute
+in the Node. It is later either connected with a NodeOutput or is represented by a
+DefaultValue.</p>
+<p>The init method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The default value for the node. It does not need to be set if it can
+be inferred by the ntype.</p></li>
+<li><p><strong>ntype</strong> – The ntype specifies which kind of input this node represents. It is
+important that this is set correctly because it has relevancy for
+the frontend representation.</p></li>
+<li><p><strong>pre_bind_hook</strong> – A function that can be additionally specified to run before
+a DefaultValue assignment to fix certain issues with the
+input(For example if there exists an easier representation
+for the frontend).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.NodeInput.bind">
+<code class="sig-name descname">bind</code><span class="sig-paren">(</span><em class="sig-param">node_output: Union[src.renderer.pipeline.graph.NodeOutput, Any]</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.NodeInput.bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds either a NodeOutput or a Value to this NodeInput. This way if the node
+gets called the correct value can be evaluated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node_output</strong> – Either a NodeOutput or a valid value that can be packed into a
+DefaultValue.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.renderer.pipeline.graph.NodeInput.get_link">
+<code class="sig-name descname">get_link</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Union[src.renderer.pipeline.graph.NodeOutput, src.renderer.pipeline.graph.DefaultValue]<a class="headerlink" href="#src.renderer.pipeline.graph.NodeInput.get_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bound edge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The NodeOutput or DefaultValue assigned to ths node. Note that in case of a
+DefaultValue, the value is represented as is before the pre_bind_hook
+is applied.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="defaultvalues"></span><dl class="class">
+<dt id="src.renderer.pipeline.graph.DefaultValue">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.graph.</code><code class="sig-name descname">DefaultValue</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">ntype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.graph.DefaultValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A default value is a type of Input for a Node that is not another NodeOutput but a
+fixed value instead. It can be changed from the frontend.</p>
+<p>Initialization of a DefaultValue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value the DefaultValue should return.</p></li>
+<li><p><strong>ntype</strong> – The ntype of the value(possible types are specified in the types module)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="types">
+<span id="id4"></span><h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<p>The types are currently for two things: The correct generation of the json serialization and the automatic inferring of
+the correct frontend widget to manipulate the value in case of a <a class="reference internal" href="#defaultvalues">DefaultValues</a>. Currently, the following types are available:</p>
+<span class="target" id="module-src.renderer.pipeline.types"></span><dl class="class">
+<dt id="src.renderer.pipeline.types.Base2Int">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Base2Int</code><span class="sig-paren">(</span><em class="sig-param">lower_bound=-9223372036854775807</em>, <em class="sig-param">upper_bound=9223372036854775807</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Base2Int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.BeatTime">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">BeatTime</code><a class="headerlink" href="#src.renderer.pipeline.types.BeatTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Bool">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Bool</code><a class="headerlink" href="#src.renderer.pipeline.types.Bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.FixedSelector">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">FixedSelector</code><span class="sig-paren">(</span><em class="sig-param">ntype</em>, <em class="sig-param">known_values</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.FixedSelector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Float">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Float</code><span class="sig-paren">(</span><em class="sig-param">lower_bound=2.2250738585072014e-308</em>, <em class="sig-param">upper_bound=1.7976931348623157e+308</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Float" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Image">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Image</code><a class="headerlink" href="#src.renderer.pipeline.types.Image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Int">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Int</code><span class="sig-paren">(</span><em class="sig-param">lower_bound=-9223372036854775807</em>, <em class="sig-param">upper_bound=9223372036854775807</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.List">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">List</code><span class="sig-paren">(</span><em class="sig-param">value_type</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.List" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.MathFunction">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">MathFunction</code><a class="headerlink" href="#src.renderer.pipeline.types.MathFunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Ntype">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Ntype</code><a class="headerlink" href="#src.renderer.pipeline.types.Ntype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.RGB">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">RGB</code><a class="headerlink" href="#src.renderer.pipeline.types.RGB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Sampler">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Sampler</code><a class="headerlink" href="#src.renderer.pipeline.types.Sampler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Selector">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Selector</code><span class="sig-paren">(</span><em class="sig-param">ntype</em>, <em class="sig-param">known_values=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Selector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.ShaderProgram">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">ShaderProgram</code><a class="headerlink" href="#src.renderer.pipeline.types.ShaderProgram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.String">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">String</code><a class="headerlink" href="#src.renderer.pipeline.types.String" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Tensor">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Tensor</code><span class="sig-paren">(</span><em class="sig-param">shape=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Tensor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Tuple">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Tuple</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.UInt">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">UInt</code><span class="sig-paren">(</span><em class="sig-param">lower_bound=0</em>, <em class="sig-param">upper_bound=9223372036854775807</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.UInt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Vector2">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Vector2</code><span class="sig-paren">(</span><em class="sig-param">lower_bound_x=2.2250738585072014e-308</em>, <em class="sig-param">upper_bound_x=1.7976931348623157e+308</em>, <em class="sig-param">lower_bound_y=None</em>, <em class="sig-param">upper_bound_y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Vector2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Vector3">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Vector3</code><span class="sig-paren">(</span><em class="sig-param">lower_bound=2.2250738585072014e-308</em>, <em class="sig-param">upper_bound=1.7976931348623157e+308</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.types.Vector3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="src.renderer.pipeline.types.Window">
+<em class="property">class </em><code class="sig-prename descclassname">src.renderer.pipeline.types.</code><code class="sig-name descname">Window</code><a class="headerlink" href="#src.renderer.pipeline.types.Window" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="existing_nodes.html" class="btn btn-neutral float-right" title="Existing Nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="graph_setup.html" class="btn btn-neutral float-left" title="Building your graph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Benedikt Wiberg, Paul Kehnel
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

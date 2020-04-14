@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Hippo7 01.04.2020 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="Installing Hippo7" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Hippo7
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing Hippo7</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-frontend">Understanding the Frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#render-server">Render Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-a-graph">Building a Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connection">Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cuda-support">CUDA Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#biggan">BigGan</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/graph_setup.html">Building your graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/rendergraph.html">The RenderGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/existing_nodes.html">Existing Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/backend/opengl.html">Open GL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/frontend/Graph_Manager.html">Graph Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/frontend/kivy_app.html">The Hippo7 App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/frontend/widgets.html">Widgets</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Hippo7</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/usage/quickstart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Again start the backend and the frontend in this order with following commands:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 render_server.py
+</pre></div>
+</div>
+<p>If you have successfully finished the installation, you should now have this window:</p>
+<img alt="../../_images/backend.png" src="../../_images/backend.png" />
+<p>Once the backend is running, you can start the frontend.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 frontend_app.py
+</pre></div>
+</div>
+<p>The  frontend App Hippo7, looking somehow similar to this should appear on your screen:</p>
+<img alt="../../_images/frontend.png" src="../../_images/frontend.png" />
+<p>By default the <a class="reference internal" href="examples.html#advanced-setup"><span class="std std-ref">Advanced setup</span></a> is selected. This means we run the 512 BigGan model and the graph consists
+of ton of nodes. So as a result you have a lot of options to configure in the frontend.</p>
+<div class="section" id="understanding-the-frontend">
+<h2>Understanding the Frontend<a class="headerlink" href="#understanding-the-frontend" title="Permalink to this headline">¶</a></h2>
+<p>Most of the controls in the frontend should be intuitive. Inevitable some parts are more complex and need
+additional information to understand them.</p>
+<p>The standard places you can look for more information are:</p>
+<p>1.Check the currently used graph and follow the node connections either directly in the
+<code class="file docutils literal notranslate"><span class="pre">src/renderer/graph_setup.py</span></code> or via a autogenerated graph with:</p>
+<dl class="function">
+<dt id="src.renderer.graph_setup.visualize_graph">
+<code class="sig-prename descclassname">src.renderer.graph_setup.</code><code class="sig-name descname">visualize_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.graph_setup.visualize_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>2.Often times resetting everything to default, the easiest way via the default preset, and then slowly changing
+a single parameter can help achieve a better understanding. Unfortunately in some cases parameters will have no affect, if
+other settings are turned off.</p>
+<p>3.Try to understand the node in the backend. Thereby first check the inputs and outputs.</p>
+<p>4.Read the docs.</p>
+</div>
+<div class="section" id="render-server">
+<h2>Render Server<a class="headerlink" href="#render-server" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="file docutils literal notranslate"><span class="pre">src/render_server.py</span></code> is the start point for the backend. Here you choose the BigGan Model and the
+graph architecture. Currently you can choose between 3 example graphs or build your own.
+The examples are stored in <code class="file docutils literal notranslate"><span class="pre">src/renderer/graph_setup</span></code>.</p>
+<p>Furthermore by running <code class="file docutils literal notranslate"><span class="pre">src/render_server.py</span></code> you start the render server and consequently the http server.</p>
+<p>If you ever want to go for a deep dive into the backend use your debugger and this place as staring point.</p>
+</div>
+<div class="section" id="building-a-graph">
+<h2>Building a Graph<a class="headerlink" href="#building-a-graph" title="Permalink to this headline">¶</a></h2>
+<p>If you feel gated by the current graph or just want to add or remove a node to implement your own idea,
+nothing should stop you. It is fairly simple to write new nodes or manipulate the existing graph.
+Check out <a class="reference internal" href="../api/backend/graph_setup.html"><span class="doc">Building your graph</span></a></p>
+</div>
+<div class="section" id="connection">
+<h2>Connection<a class="headerlink" href="#connection" title="Permalink to this headline">¶</a></h2>
+<p>If no connection can be established between frontend and backend you have multiple locations where you
+can start investigating:</p>
+<ol class="arabic simple">
+<li><p>Check if the backend <code class="file docutils literal notranslate"><span class="pre">src/render_server</span></code> uses the same ip as the frontend <code class="file docutils literal notranslate"><span class="pre">src/ui/hippo7.ini</span></code></p></li>
+<li><p>If you are not in a localhost environment use the following function.</p></li>
+</ol>
+<dl class="function">
+<dt id="src.renderer.server.get_ip">
+<code class="sig-prename descclassname">src.renderer.server.</code><code class="sig-name descname">get_ip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.server.get_ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="cuda-support">
+<h2>CUDA Support<a class="headerlink" href="#cuda-support" title="Permalink to this headline">¶</a></h2>
+<p>The tool automatically detects if CUDA is installed and will use it.
+Since the computation for BigGan are relatively expensive you will definitely need CUDA for a smooth live video,
+otherwise you will struggle to reach enough frames per second.</p>
+<p>If the aim is to record a video a GPU is not required, since you can set the FPS to a “fixed time” via:</p>
+<dl class="function">
+<dt id="src.renderer.pipeline.nodes_util.fixed_time_generator">
+<code class="sig-prename descclassname">src.renderer.pipeline.nodes_util.</code><code class="sig-name descname">fixed_time_generator</code><span class="sig-paren">(</span><em class="sig-param">framelength=0.03333333333333333</em><span class="sig-paren">)</span><a class="headerlink" href="#src.renderer.pipeline.nodes_util.fixed_time_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using a fixed length for each frame, enables a easy solution for video recording or similar tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>framelength</strong> – Length of a single frame, where 1.0/30 translates to 30 frames per second.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="biggan">
+<h2>BigGan<a class="headerlink" href="#biggan" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://arxiv.org/abs/1809.11096">BigGan</a> can be used in 3 different resolutions: 128, 256 and 512. You can select your desired model in the
+render_server. The higher the resolution, the higher the required computing power.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installing Hippo7" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Benedikt Wiberg, Paul Kehnel
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

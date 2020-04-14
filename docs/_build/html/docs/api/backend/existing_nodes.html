@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Existing Nodes &mdash; Hippo7 01.04.2020 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Open GL" href="opengl.html" />
+    <link rel="prev" title="The RenderGraph" href="rendergraph.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Hippo7
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/installation.html">Installing Hippo7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="graph_setup.html">Building your graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rendergraph.html">The RenderGraph</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Existing Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opengl.html">Open GL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/Graph_Manager.html">Graph Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/kivy_app.html">The Hippo7 App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend/widgets.html">Widgets</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Hippo7</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Existing Nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/docs/api/backend/existing_nodes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="existing-nodes">
+<h1>Existing Nodes<a class="headerlink" href="#existing-nodes" title="Permalink to this headline">¶</a></h1>
+<p>These are the nodes that have already been implemented.</p>
+<span class="target" id="module-renderer.pipeline.nodes"></span><dl class="class">
+<dt id="renderer.pipeline.nodes.Biggan">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">Biggan</code><span class="sig-paren">(</span><em class="sig-param">model_type: str = 'biggan-deep-128'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.Biggan" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Biggan Node generates pictures based on a noise_vector and a class_vector(These
+can be generated by the NoiseSampler/ClassSampler Nodes).</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>noise_vector:</dt><dd><p>A noise vector in the shape of (1, 128).</p>
+</dd>
+<dt>class_vector:</dt><dd><p>A class vector in the shape of (1, 1).</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>image:</dt><dd><p>A generated output image.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.BinaryFunction">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">BinaryFunction</code><span class="sig-paren">(</span><em class="sig-param">**kwargs: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.BinaryFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the result of two input values x y and an arbitrary function string. It
+is preferable to use the ComplexFunction Node as it provides additional values as
+inputs and has better error checking.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>x:</dt><dd><p>A float input.</p>
+</dd>
+<dt>y:</dt><dd><p>A float input.</p>
+</dd>
+<dt>function:</dt><dd><p>A function that should be computed at every timestep. Should be provided as
+a string.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>result:</dt><dd><p>Result of the computation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.BpmClock">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">BpmClock</code><span class="sig-paren">(</span><em class="sig-param">time_generator=&lt;generator object time_generator&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.BpmClock" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BpmClock is one of the core nodes for a standard Rendergraph. It gives out
+multiple signals synchronized to a bpm, typically the bpm of the song that is
+currently playing.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>bpm:</dt><dd><p>A beats per minute value.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>beat_time:</dt><dd><p>An object that contains all information outputted by the node in one
+place.</p>
+</dd>
+<dt>counter:</dt><dd><p>A counter of the beats, so 10 will mean that 10 beats have passed in total.</p>
+</dd>
+<dt>isBeat:</dt><dd><p>If the current frame is on a beat or not.</p>
+</dd>
+<dt>time:</dt><dd><p>Total time that has passed since startup.</p>
+</dd>
+<dt>normalized_time:</dt><dd><p>The time normalized by the bpm, so that each unit is equal to the
+time passing between two beats. So 12.20 will be the value after 12 beats passing and
+20 % along the way to the next beat. Is equal to counter + local_time.</p>
+</dd>
+<dt>delta_time:</dt><dd><p>The time passed between two frames.</p>
+</dd>
+<dt>local_time:</dt><dd><p>The percent of time passed between the last and next beat. Basically, it
+is a value between 0 and 1 that describes how far we are distanced to both on a time
+basis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id5"><span class="problematic" id="id6">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.ClassPool">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">ClassPool</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.ClassPool" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class pool node, which has additional frontend logic to make the class ids are
+properly selectable.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>class_pool:</dt><dd><p>The Classes that should be used for possible interpolation targets.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>output_class_pool:</dt><dd><p>The value to access the class pool.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id7"><span class="problematic" id="id8">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.ClassSampler">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">ClassSampler</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.ClassSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples classes as defined in the sampling scheme.</p>
+<dl>
+<dt>Inputs:</dt><dd><dl>
+<dt>class_pool:</dt><dd><p>Pool of classes we sample from.</p>
+</dd>
+<dt>sample_options:</dt><dd><p>The sampling scheme that will be used. Currently avaiable schemes are: “star”: Samples ray_count
+nodes in consecutive order before resampling the center. The center is normally the class pool at index 0,
+but can be changed with resample_center_every_n:</p>
+<dl class="simple">
+<dt>“continuous”:</dt><dd><p>Samples the class_pool in round robin fashion.</p>
+</dd>
+<dt>“ping_pong”:</dt><dd><p>Switches between the 0th and 1st entry of the class pool.</p>
+</dd>
+<dt>“random”:</dt><dd><p>Samples a random class from the pool. Guarantees that no class while be
+sampled 2 times in a row.</p>
+</dd>
+</dl>
+</dd>
+<dt>resample_center_every_n:</dt><dd><p>The bool decides if it the center in star mode should be resampled every n values,
+the int is the n.</p>
+</dd>
+<dt>ray_count:</dt><dd><p>How many rays should be sampled before jumping back to the center.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>sampler:</dt><dd><p>The sample function that can be used to sample a value.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id9"><span class="problematic" id="id10">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.ColorToImage">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">ColorToImage</code><span class="sig-paren">(</span><em class="sig-param">**kwargs: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.ColorToImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a color input and creates a valid texture from it.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>color:</dt><dd><p>A color tuple input.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>image:</dt><dd><p>A valid picture of the size 1x1, which can be used as a texture or for
+something else.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id11"><span class="problematic" id="id12">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.ComplexFunction">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">ComplexFunction</code><span class="sig-paren">(</span><em class="sig-param">presets=None</em>, <em class="sig-param">bounds=(0</em>, <em class="sig-param">1)</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.ComplexFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>A complex function with multiple possible inputs. Also allows slower playback by
+changing the single_beat_length.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>single_beat_length:</dt><dd><p>The length of a single beat. So if 1, the x value will change
+from 0 to 1 over the course of a single beat. If 4, it will be 4 times as slow.</p>
+</dd>
+<dt>x:</dt><dd><p>An input time value in the normalized_time format. While other values could
+be used, this is the de facto standard.</p>
+</dd>
+<dt>y:</dt><dd><p>An additional input value, can be bound to something if needed.</p>
+</dd>
+<dt>z:</dt><dd><p>An additional input value, can be bound to something if needed.</p>
+</dd>
+<dt>abc:</dt><dd><p>A tuple of 3 additional inputs.</p>
+</dd>
+<dt>function:</dt><dd><p>A function to compute.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>result:</dt><dd><p>The result of computing the function. after changing the beat_length.</p>
+</dd>
+<dt>linear_result:</dt><dd><p>The result of just changing the beat_length with single_beat_length.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id13"><span class="problematic" id="id14">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.DrawNode">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">DrawNode</code><span class="sig-paren">(</span><em class="sig-param">**kwargs: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.DrawNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The draw node is the standard final node in a graph to display something. All three
+inputs must be connected.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>faces:</dt><dd><p>A list of the faces that should be displayed. This needs to come from a
+GeometryController Node as that node transmits the actual mesh data to the shader.</p>
+</dd>
+<dt>shader:</dt><dd><p>A ShaderProgram that runs the rendering pipeline.</p>
+</dd>
+<dt>window:</dt><dd><p>The window that the frame should be rendered on.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><p>The DrawNode has no output, since it renders directly to the window.</p>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id15"><span class="problematic" id="id16">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.GeometryController">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">GeometryController</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.GeometryController" title="Permalink to this definition">¶</a></dt>
+<dd><p>The geometry controller node is one of the key nodes to render something. It manages
+mesh creation, texturing and mesh positioning.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>shader:</dt><dd><p>A shader program that the mesh data will be transmitted to.</p>
+</dd>
+<dt>texture:</dt><dd><p>A texture that will be displayed on the mesh.</p>
+</dd>
+<dt>mesh:</dt><dd><p>The mesh that will be displayed. Currently all available meshes are in the
+assets/meshes/ folder and are selectable in the frontend. You can access the path
+list through mesh_dict.</p>
+</dd>
+<dt>view_distance:</dt><dd><p>The position of the camera. It is currently only movable in the z
+direction.</p>
+</dd>
+<dt>window_size:</dt><dd><p>The size of the window, should be bound the output of a Window node.</p>
+</dd>
+<dt>model_matrix:</dt><dd><p>All parameters for the positioning, scaling and rotation of the mesh.
+Currently there are no extra measures against gimbal locking.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>faces:</dt><dd><p>This output is a list of face ids that should be displayed. It should be
+connected to a faces input on one of the recording nodes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id17"><span class="problematic" id="id18">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.Interpolate">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">Interpolate</code><span class="sig-paren">(</span><em class="sig-param">**kwargs: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.Interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolates between two vectors. The two vectors should have the same dimensions or
+support pytorch broadcasting.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>interpolation_value:</dt><dd><p>Where betweeen the two vectors the output should be set to.
+Values between 0 and 1 make the most sense, but others are also valid and represent
+an extrapolation.</p>
+</dd>
+<dt>input_vector0:</dt><dd><p>The first vector.</p>
+</dd>
+<dt>input_vector1:</dt><dd><p>The second vector.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>result:</dt><dd><p>The interpolation result.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id19"><span class="problematic" id="id20">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.ModelMatrix">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">ModelMatrix</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.ModelMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a translation matrix from all possible input variables.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>position:</dt><dd><p>A tuple of (x,y,z) position coordinates.</p>
+</dd>
+<dt>rotation:</dt><dd><p>A tuple of (x,y,z) rotation data. Not safe against gimbal lock!</p>
+</dd>
+<dt>scale:</dt><dd><p>A tuple of(x,y,z) scaling values.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>model_matrix:</dt><dd><p>A translation matrix output.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id21"><span class="problematic" id="id22">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.ModifiedBpm">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">ModifiedBpm</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.ModifiedBpm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ModifiedBpm node is used to modify bpm speed and then provide the same outputs.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>in_beat_time:</dt><dd><p>A BeatTimeMessage object to modifiy.</p>
+</dd>
+<dt>time_modifier:</dt><dd><p>The speed value by which the time should be changed.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>out_beat_time:</dt><dd><p>An object that contains all information outputted by the node in one
+place.</p>
+</dd>
+<dt>counter:</dt><dd><p>A counter of the beats, so 10 will mean that 10 beats have passed in total.</p>
+</dd>
+<dt>isBeat:</dt><dd><p>If the current frame is on a beat or not.</p>
+</dd>
+<dt>time:</dt><dd><p>Total time that has passed since startup.</p>
+</dd>
+<dt>normalized_time:</dt><dd><p>The time normalized by the bpm, so that each unit is equal to the
+time passing between two beats. So 12.20 will be the value after 12 beats
+passing and 20 % along the way to the next beat. Is equal to counter +
+local_time.</p>
+</dd>
+<dt>delta_time:</dt><dd><p>The time passed between two frames.</p>
+</dd>
+<dt>local_time:</dt><dd><p>The percent of time passed between the last and next beat. Basically, it
+is a value between 0 and 1 that describes how far we are distanced to both
+on a time basis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id23"><span class="problematic" id="id24">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.NoiseSampler">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">NoiseSampler</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.NoiseSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples noise as defined by the sampling scheme.</p>
+<dl>
+<dt>Inputs:</dt><dd><dl>
+<dt>sample_options:</dt><dd><p>The mode how the noise will be sampled. All samples are drawn from a
+normal distribution, if not specified. Possible modes are:</p>
+<dl class="simple">
+<dt>“PingPong”:</dt><dd><p>Samples a vector and then inverts it on every consecutive sampling.</p>
+</dd>
+<dt>“SimpleRotation”:</dt><dd><p>Samples the center(so all zeroes), except the 0th and first
+dimension are sampled along a circle, the amount of rotation per sample is
+given by the rotation_speed value.</p>
+</dd>
+<dt>“ComplexRotation”:</dt><dd><p>Samples in a very chaotic rotation roughly around the center.</p>
+</dd>
+<dt>“Random”:</dt><dd><p>Samples in a random manner.</p>
+</dd>
+<dt>“RandomStar”:</dt><dd><p>Samples randomly, but every second sample is all zeroes.</p>
+</dd>
+</dl>
+</dd>
+<dt>truncation:</dt><dd><p>Multiplies the vector by a value, so the higher the truncation, the
+higher the likelihood that the sample is nonsensical, the lower the truncation,
+the smaller the sample variance.</p>
+</dd>
+<dt>rotation_speed:</dt><dd><p>Speed of rotation around the center for the two rotation sampling
+modes. The higher, the faster the samples change.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>sampler:</dt><dd><p>The sampling function. Every call creates a new sample according to the
+sampling scheme.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id25"><span class="problematic" id="id26">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.PaddedColorToImage">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">PaddedColorToImage</code><span class="sig-paren">(</span><em class="sig-param">**kwargs: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.PaddedColorToImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a color input and creates a 4x4 texture from it, where one corner is assigned
+a color, while the rest is black.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>color:</dt><dd><p>A color tuple input.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>image:</dt><dd><p>A valid picture of the size 4x4, which can be used as a texture or for
+something else.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id27"><span class="problematic" id="id28">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.RecordingDrawNode">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">RecordingDrawNode</code><span class="sig-paren">(</span><em class="sig-param">video_folder=PosixPath('/home/lex/PycharmProjects/hippo7_vjing/assets/videos')</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.RecordingDrawNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The recording draw node is the a final node in a graph to both display and record
+something. All three inputs facesm shader and window must be connected.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>faces:</dt><dd><p>A list of the faces that should be displayed. This needs to come from a
+GeometryController Node as that node transmits the actual mesh data to the shader.</p>
+</dd>
+<dt>shader:</dt><dd><p>A ShaderProgram that runs the rendering pipeline.</p>
+</dd>
+<dt>window:</dt><dd><p>The window that the frame should be rendered on.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>recording:</dt><dd><p>A bool if a video should be recorded or not.</p>
+</dd>
+<dt>song_name:</dt><dd><p>The song that should be the background music for the recorded video.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id29"><span class="problematic" id="id30">**</span></a>kwargs.</p>
+<dl class="method">
+<dt id="renderer.pipeline.nodes.RecordingDrawNode.declare_writer">
+<code class="sig-name descname">declare_writer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.RecordingDrawNode.declare_writer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a ffmpeg writer and define the output file name.
+For this to work a change to the FFMPEG_VideoWriter backend has to be done:</p>
+<ul class="simple">
+<li><p>search and remove -an</p></li>
+<li><p>optional so the song works: add ‘-shortest’ to the audio option</p></li>
+<li><p><a class="reference external" href="https://github.com/Zulko/moviepy/pull/968">https://github.com/Zulko/moviepy/pull/968</a> if merged maybe this is not needed anymore</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ffmpeg writer and the frame buffer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.SampleManager">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">SampleManager</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.SampleManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manages the sampling and correct replacement of some variable that can be sampled,
+such as noise or class.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>time:</dt><dd><p>Some time value. If it is lower than the value of the previous frame,
+it signals a beat.</p>
+</dd>
+<dt>sampler:</dt><dd><p>The sample function from which samples are drawn.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>vector0:</dt><dd><p>The current output vector.</p>
+</dd>
+<dt>vector1:</dt><dd><p>The next output vector.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id31"><span class="problematic" id="id32">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.ScalarToVector">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">ScalarToVector</code><span class="sig-paren">(</span><em class="sig-param">vector_size=2</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.ScalarToVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a vector2 from a scalar value</p>
+<p>The init method sets all input edges to values based on the <a href="#id33"><span class="problematic" id="id34">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.Shader">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">Shader</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.Shader" title="Permalink to this definition">¶</a></dt>
+<dd><p>The shader node manages the Vertex and Fragment Shader of the pipeline. It has
+numerous inputs that manage different effects. It does not manage the geometry or
+texture parts of the shader inputs, that is the mesh, its position or texture.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>apply_sobel:</dt><dd><p>If True, applies edge detection through the sobel operator.</p>
+</dd>
+<dt>sobel_resolution:</dt><dd><p>The raster resolution for the sobel operator. The higher, the
+finer the edge results.</p>
+</dd>
+<dt>is_mirrored:</dt><dd><p>If True, mirrors the texture along the (u,v) axes.</p>
+</dd>
+<dt>repeat_times:</dt><dd><p>How often the texture should be repeated in the (u,v) coordinate space.</p>
+</dd>
+<dt>texture_scaling_x:</dt><dd><p>Multiplies the texture coordinates in the u dimension.</p>
+</dd>
+<dt>texture_scaling_y:</dt><dd><p>Multiplies the texture coordinates in the v dimension.</p>
+</dd>
+<dt>is_crosshatched:</dt><dd><p>Applies the crosshatching effect on the texture.</p>
+</dd>
+<dt>is_inverted:</dt><dd><p>Inverts the output colors.</p>
+</dd>
+<dt>halftone_resolution:</dt><dd><p>If &gt;0, applies the halftone effect. The greater the value, the
+finer the resolution.</p>
+</dd>
+<dt>brightness:</dt><dd><p>Multiplies the pixel output by this value to control pixel brightness.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>shader:</dt><dd><p>The shader program as an output, needed for both the GeometryController and
+the DrawNode.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id35"><span class="problematic" id="id36">**</span></a>kwargs.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="renderer.pipeline.nodes.Window">
+<em class="property">class </em><code class="sig-prename descclassname">renderer.pipeline.nodes.</code><code class="sig-name descname">Window</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renderer.pipeline.nodes.Window" title="Permalink to this definition">¶</a></dt>
+<dd><p>This node exists for resizing and rendering purposes. It provides access to both the
+window size and the window.</p>
+<dl class="simple">
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>size:</dt><dd><p>The size of the window as a (width, height) tuple.</p>
+</dd>
+<dt>window:</dt><dd><p>The window object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>The init method sets all input edges to values based on the <a href="#id37"><span class="problematic" id="id38">**</span></a>kwargs.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="opengl.html" class="btn btn-neutral float-right" title="Open GL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rendergraph.html" class="btn btn-neutral float-left" title="The RenderGraph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Benedikt Wiberg, Paul Kehnel
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

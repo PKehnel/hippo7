@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Widgets &mdash; Hippo7 01.04.2020 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="The Hippo7 App" href="kivy_app.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Hippo7
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/installation.html">Installing Hippo7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/examples.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../backend/graph_setup.html">Building your graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/rendergraph.html">The RenderGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/existing_nodes.html">Existing Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/opengl.html">Open GL</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Graph_Manager.html">Graph Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kivy_app.html">The Hippo7 App</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Widgets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generic-widgets">Generic Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-widgets">Custom Widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#class-selection">Class Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bpm-manager">BPM Manager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Hippo7</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Widgets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/docs/api/frontend/widgets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="widgets">
+<h1>Widgets<a class="headerlink" href="#widgets" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#generic-widgets" id="id1">Generic Widgets</a></p></li>
+<li><p><a class="reference internal" href="#custom-widgets" id="id2">Custom Widgets</a></p></li>
+</ul>
+</div>
+<div class="section" id="generic-widgets">
+<h2>Generic Widgets<a class="headerlink" href="#generic-widgets" title="Permalink to this headline">¶</a></h2>
+<p>The generic widgets job is to handle and display frequently recurring values, like the node parameters or
+certain buttons.</p>
+<p>For example a float will always be displayed with a slider. Additional information like the min/max or the
+stepsize can be parsed alongside.</p>
+<dl class="class">
+<dt id="src.ui.widgets.custom_widgets.NodeWidget">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.custom_widgets.</code><code class="sig-name descname">NodeWidget</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">param_name</em>, <em class="sig-param">value</em>, <em class="sig-param">set_value</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.custom_widgets.NodeWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard for all NodeWidgets handling the initialization.
+Also providing a simplified set function, where only the value has to be given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_name</strong> – current node name</p></li>
+<li><p><strong>param_name</strong> – adjustable param</p></li>
+<li><p><strong>value</strong> – current value</p></li>
+<li><p><strong>set_value</strong> – function to call on value change</p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.custom_widgets.NodeSwitch">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.custom_widgets.</code><code class="sig-name descname">NodeSwitch</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.custom_widgets.NodeSwitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches are the standard representation for bool values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – See parent class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.custom_widgets.NodeSlider">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.custom_widgets.</code><code class="sig-name descname">NodeSlider</code><span class="sig-paren">(</span><em class="sig-param">min_value=0</em>, <em class="sig-param">max_value=15</em>, <em class="sig-param">step=1</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.custom_widgets.NodeSlider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slider are the standard representation for int and float values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_value</strong> – Left end of slider.</p></li>
+<li><p><strong>max_value</strong> (<em>param</em>) – Right end of slider.</p></li>
+<li><p><strong>step</strong> (<em>param</em>) – Step size, needs to be int for integer sliders.</p></li>
+<li><p><strong>kwargs</strong> – See parent class.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.custom_widgets.NodeColor">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.custom_widgets.</code><code class="sig-name descname">NodeColor</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.custom_widgets.NodeColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Color Wheels from kivy garden are the standard representation for RGB colors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – See parent class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.custom_widgets.NodeDisplay">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.custom_widgets.</code><code class="sig-name descname">NodeDisplay</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.custom_widgets.NodeDisplay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text Fields are the standard representation for strings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – See parent class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.custom_widgets.CustomButton">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.custom_widgets.</code><code class="sig-name descname">CustomButton</code><span class="sig-paren">(</span><em class="sig-param">function=&lt;function CustomButton.&lt;lambda&gt;&gt;</em>, <em class="sig-param">start_value_function=None</em>, <em class="sig-param">function_call_back=None</em>, <em class="sig-param">hold_down=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.custom_widgets.CustomButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom Button for binary operations with predefined second operators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> – Any sort of binary operation.</p></li>
+<li><p><strong>start_value_function</strong> – If operand comes from a function.</p></li>
+<li><p><strong>function_call_back</strong> – Function to call with result value.</p></li>
+<li><p><strong>hold_down</strong> – If on hold down the operation will be triggered repeatedly.</p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.custom_widgets.CustomToggleButton">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.custom_widgets.</code><code class="sig-name descname">CustomToggleButton</code><span class="sig-paren">(</span><em class="sig-param">function, function_on_release=None, text_options=['Play', 'Pause'], **kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.custom_widgets.CustomToggleButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Toggle Button that changes the displayed text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> – Function to execute on button press.</p></li>
+<li><p><strong>function_on_release</strong> – Second function triggered on “release press”, only if specified.</p></li>
+<li><p><strong>text_options</strong> – Text to display for both button states.</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="custom-widgets">
+<h2>Custom Widgets<a class="headerlink" href="#custom-widgets" title="Permalink to this headline">¶</a></h2>
+<p>Parts that are only used once or have a low probability that they will be reused, dont have to be written in such
+a general style.</p>
+<div class="section" id="class-selection">
+<h3>Class Selection<a class="headerlink" href="#class-selection" title="Permalink to this headline">¶</a></h3>
+<p>The node class selection handles from which classes we sample.
+In the frontend you can manipulate, reorder … this pool with the class selection widget.</p>
+<span class="target" id="module-src.ui.widgets.class_selection"><span id="class-selection-widget"></span></span><dl class="class">
+<dt id="src.ui.widgets.class_selection.AutoCompleteTextInput">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.class_selection.</code><code class="sig-name descname">AutoCompleteTextInput</code><span class="sig-paren">(</span><em class="sig-param">imagenet_dict</em>, <em class="sig-param">wordnet_dict</em>, <em class="sig-param">add_class_to_pool</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.AutoCompleteTextInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text input field to add new labels to the class pool via enter.
+Suggestions are stored in the variable suggestions and generated based on the current input
+and matching patterns in the passed dictionaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imagenet_dict</strong> – Char to labels and labels to idx (pygtrie).</p></li>
+<li><p><strong>wordnet_dict</strong> – Char to hyponym and hyponym to idx (pygtrie).</p></li>
+<li><p><strong>add_class_to_pool</strong> – Function to add a new class to the pool (usage via kv file).</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.AutoCompleteTextInput.on_text">
+<code class="sig-name descname">on_text</code><span class="sig-paren">(</span><em class="sig-param">caller</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.AutoCompleteTextInput.on_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>This runs a callback when the text changes. The functions first clears all suggestions
+and then adds new suggestions based on the input to the suggestions variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caller</strong> – The caller of the function. Kivy “bind” internal behavior.</p></li>
+<li><p><strong>value</strong> – Current text in the text field.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.AutoCompleteTextInput.update_text">
+<code class="sig-name descname">update_text</code><span class="sig-paren">(</span><em class="sig-param">caller</em>, <em class="sig-param">value: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.AutoCompleteTextInput.update_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the text and text_origin value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caller</strong> – The caller of the function. Kivy “bind” internal behavior.</p></li>
+<li><p><strong>value</strong> – dict containing the text and the text_origin</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.class_selection.ClassSelection">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.class_selection.</code><code class="sig-name descname">ClassSelection</code><span class="sig-paren">(</span><em class="sig-param">param_name: str</em>, <em class="sig-param">node_name: str</em>, <em class="sig-param">value: List</em>, <em class="sig-param">graph_manager</em>, <em class="sig-param">attributes</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Widget for class selection. This widget consist of 4 sub parts:</dt><dd><ul class="simple">
+<li><p>recycle_view_class_pool: a recycle view (RV) showing all class labels currently in the pool</p></li>
+<li><p>drop_down_widget: a text input field to add new classes to the pool via enter, extend by a RV for displaying suggestions</p></li>
+<li><p>delete button: to remove exactly one entry from the pool</p></li>
+<li><p>clear all button: to remove all except one entry from the pool</p></li>
+<li><p>move entry button: to put a class to the top of the class pool. Ordering is important for the class sampler</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>param_name</strong> – Parameter name.</p></li>
+<li><p><strong>node_name</strong> – Node name.</p></li>
+<li><p><strong>value</strong> – List of indexes currently in the class pool.</p></li>
+<li><p><strong>graph_manager</strong> – Graph Manager.</p></li>
+<li><p><strong>attributes</strong> – Observable attributes.</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.ClassSelection.add_class_to_pool">
+<code class="sig-name descname">add_class_to_pool</code><span class="sig-paren">(</span><em class="sig-param">class_label</em>, <em class="sig-param">text_origin=0</em>, <em class="sig-param">index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection.add_class_to_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a list of classes to the class pool.
+:param class_label: Either a single class label or a hyponym.
+:param text_origin: 0 = single class, 1 = hyponym.
+:param index: Index at which position to add the class. Defaults to the front of the list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.ClassSelection.create_class_pools">
+<code class="sig-name descname">create_class_pools</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection.create_class_pools" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Initialize the class pool. Currently this information is stored in two locations:</dt><dd><ul class="simple">
+<li><p>self.value (list of class idx currently in the pool)</p></li>
+<li><p>self.class_pool_list_of_dicts (RV data format)</p></li>
+</ul>
+</dd>
+</dl>
+<p>This is due the internal working of the recycle view that requires a list containing a dictionary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.ClassSelection.delete_entry">
+<code class="sig-name descname">delete_entry</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection.delete_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the selected (highlighted) entry from the class pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>caller</strong> – The caller of the function. Kivy “bind” internal behavior.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.ClassSelection.load_dicts">
+<code class="sig-name descname">load_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection.load_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>For better runtime speed multiple trees and dictionaries are precomputed, mapping between:</dt><dd><ul class="simple">
+<li><p>imagenet_labels: Char to labels and labels to idx (pygtrie).</p></li>
+<li><p>imagenet_classes: Idx to label (dict).</p></li>
+<li><p>wordnet_labels: Char to hyponym and hyponym to idx (pygtrie).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.ClassSelection.move_node_to_top">
+<code class="sig-name descname">move_node_to_top</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection.move_node_to_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the selected node to the the start of the class pool. This is mainly for the class sampler,
+who works position based. (E.g. star sampling taxed node at position [0] as center).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>caller</strong> – The caller of the function. Kivy “bind” internal behavior.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.ClassSelection.reset_class_pool">
+<code class="sig-name descname">reset_class_pool</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection.reset_class_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all classes except one, since the samples always need an output.
+Currently the one class is fixed to mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>caller</strong> – The caller of the function. Kivy “bind” internal behavior.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.class_selection.ClassSelection.update_observable">
+<code class="sig-name descname">update_observable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.ClassSelection.update_observable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Observable node pattern. Triggered when the observed value is changed.
+Updates the value in both stored locations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Dict containing the parameter name and the updated value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.class_selection.DropDownWidget">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.class_selection.</code><code class="sig-name descname">DropDownWidget</code><span class="sig-paren">(</span><em class="sig-param">imagenet_dict</em>, <em class="sig-param">wordnet_dict</em>, <em class="sig-param">add_class_to_pool</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.DropDownWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>The DDW consist of a text input field(TIF) and a recycle view(RV). They both observe each other.
+If new text is added in the TIF, the suggestions will be displayed in the RV.
+If a item gets selected in the RV it will be set as text in the TIF.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imagenet_dict</strong> – char to labels and labels to idx (pygtrie)</p></li>
+<li><p><strong>wordnet_dict</strong> – char to hyponym and hyponym to idx (pygtrie)</p></li>
+<li><p><strong>add_class_to_pool</strong> – function to add a new class to the class pool</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="src.ui.widgets.class_selection.key_to_int">
+<code class="sig-prename descclassname">src.ui.widgets.class_selection.</code><code class="sig-name descname">key_to_int</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.class_selection.key_to_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>When using json keys are interpreted as strings.
+The functions transforms all keys to int.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> – Dictionary with Int keys stored as String</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Input dictionary with Int keys.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="bpm-manager">
+<span id="bpm-widget"></span><h3>BPM Manager<a class="headerlink" href="#bpm-manager" title="Permalink to this headline">¶</a></h3>
+<p>This widget handles detecting, setting or adjusting of the BPM. This is the only computation actually done in
+the frontend, since often the frontend device is physically next to the music.</p>
+<span class="target" id="module-src.ui.widgets.bpm_widget"></span><dl class="class">
+<dt id="src.ui.widgets.bpm_widget.BPMManager">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.bpm_widget.</code><code class="sig-name descname">BPMManager</code><span class="sig-paren">(</span><em class="sig-param">observable_node</em>, <em class="sig-param">graph_manager</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.bpm_widget.BPMManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main purpose of the BPMManager is to tell if the current frame lies on a beat.
+:param observable_node: The BPM node, storing the current bpm value as float.
+:param graph_manager: Project graph manager.
+:param **kwargs:</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="src.ui.widgets.bpm_widget.GlobalBPMWidget">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.widgets.bpm_widget.</code><code class="sig-name descname">GlobalBPMWidget</code><span class="sig-paren">(</span><em class="sig-param">observable_node</em>, <em class="sig-param">graph_manager</em>, <em class="sig-param">bpm_manager</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.bpm_widget.GlobalBPMWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedule the update event 60 times a second. Initialize connection to the bpm_manager.
+They both work on the same node. The BPMWidget is responsible for displaying the bpm and
+offering functionality to manipulate it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>observable_node</strong> – Bhe BPM node, storing the current bpm value as float.</p></li>
+<li><p><strong>graph_manager</strong> – Project graph manager.</p></li>
+<li><p><strong>bpm_manager</strong> – Checking if the frame is on a beat.</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.ui.widgets.bpm_widget.GlobalBPMWidget.auto_detect">
+<code class="sig-name descname">auto_detect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.bpm_widget.GlobalBPMWidget.auto_detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggles the “detect_bpm” button and call the detect_bpm function every 8 seconds.
+The interval needs to be at least a long as the Beat Detections needs for enough samples.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.bpm_widget.GlobalBPMWidget.detect_bpm">
+<code class="sig-name descname">detect_bpm</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.bpm_widget.GlobalBPMWidget.detect_bpm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call the beat detection from the Beat Manager.
+:param *args: Kivy internal, (contains the caller (Button) of the function)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.bpm_widget.GlobalBPMWidget.get_bpm">
+<code class="sig-name descname">get_bpm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.bpm_widget.GlobalBPMWidget.get_bpm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to use at runtime in kv files.
+Returns: BPM (float)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.bpm_widget.GlobalBPMWidget.get_bpm_from_tap">
+<em class="property">static </em><code class="sig-name descname">get_bpm_from_tap</code><span class="sig-paren">(</span><em class="sig-param">tap_times: List</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#src.ui.widgets.bpm_widget.GlobalBPMWidget.get_bpm_from_tap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the BPM based on a list of timestamps.
+:param tap_times: List of time values.</p>
+<p>Returns: The computed bpm value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.bpm_widget.GlobalBPMWidget.tap_detect">
+<code class="sig-name descname">tap_detect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.bpm_widget.GlobalBPMWidget.tap_detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the current time to a list o timestamps.
+Called in hippo7.kv</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.widgets.bpm_widget.GlobalBPMWidget.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.widgets.bpm_widget.GlobalBPMWidget.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update is triggered by a scheduled, 60 times a second (see init).
+It checks if there are enough samples to allow for beat detection and
+checks if the tapping stopped.
+:param dt: Delta time.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="kivy_app.html" class="btn btn-neutral float-left" title="The Hippo7 App" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Benedikt Wiberg, Paul Kehnel
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

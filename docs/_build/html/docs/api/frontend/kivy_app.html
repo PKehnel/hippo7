@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Hippo7 App &mdash; Hippo7 01.04.2020 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Widgets" href="widgets.html" />
+    <link rel="prev" title="Graph Manager" href="Graph_Manager.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Hippo7
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/installation.html">Installing Hippo7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/examples.html">Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../backend/graph_setup.html">Building your graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/rendergraph.html">The RenderGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/existing_nodes.html">Existing Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backend/opengl.html">Open GL</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Graph_Manager.html">Graph Manager</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Hippo7 App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kivy">Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-main-page">The main page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-pages">Node pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#beat-detection-and-bpm-manager">Beat Detection and BPM Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="widgets.html">Widgets</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Hippo7</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>The Hippo7 App</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/docs/api/frontend/kivy_app.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-hippo7-app">
+<h1>The Hippo7 App<a class="headerlink" href="#the-hippo7-app" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#kivy" id="id3">Kivy</a></p></li>
+<li><p><a class="reference internal" href="#the-main-page" id="id4">The main page</a></p></li>
+<li><p><a class="reference internal" href="#node-pages" id="id5">Node pages</a></p></li>
+<li><p><a class="reference internal" href="#beat-detection-and-bpm-manager" id="id6">Beat Detection and BPM Manager</a></p></li>
+</ul>
+</div>
+<div class="section" id="kivy">
+<h2>Kivy<a class="headerlink" href="#kivy" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://kivy.org/#home">Kivy</a> is a free and open source Python library for developing mobile apps and other multitouch application software with a natural user interface.</p>
+<p>The Frontend is build completely with Kivy.</p>
+</div>
+<div class="section" id="the-main-page">
+<h2>The main page<a class="headerlink" href="#the-main-page" title="Permalink to this headline">¶</a></h2>
+<p>The main page consist of a bpm widget in the top left, next to it a overview for all nodes in the backend.
+Beneath that the currently selected node is displayed and presets are shown at the bottom.</p>
+<p>Furthermore the main page automatically generates the node pages at runtime according to the backend graph.
+See next paragraph <a class="reference internal" href="#node-pages">Node Pages</a>.</p>
+<dl class="class">
+<dt id="src.ui.ui_kivy.Hippo7Layout">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.ui_kivy.</code><code class="sig-name descname">Hippo7Layout</code><span class="sig-paren">(</span><em class="sig-param">config=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.ui_kivy.Hippo7Layout" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Initialize the main layout of the app, consisting off:</dt><dd><ul class="simple">
+<li><p>Play / Pause Button</p></li>
+<li><p>Print Graph Button</p></li>
+<li><p>Global BPM Widget</p></li>
+<li><p>Navigation bar</p></li>
+<li><p>Custom pages according to the graph from the backend</p></li>
+</ul>
+</dd>
+</dl>
+<p>For each node in the graph a screen is created and added to the screen manager.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – Address of the server.</p></li>
+<li><p><strong>port</strong> – Port from the server.</p></li>
+<li><p><strong>config</strong> – hippo7.ini containing information like port, btn.color</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="node-pages">
+<span id="id2"></span><h2>Node pages<a class="headerlink" href="#node-pages" title="Permalink to this headline">¶</a></h2>
+<p>The node pages  are auto generated at runtime. This works as long as the nodes
+follow the <a class="reference internal" href="../backend/rendergraph.html#types"><span class="std std-ref">type conventions</span></a> specified in the backend. Currently supported parameter types include:</p>
+<p>String, Int, Double, Bool, Base2Int, Tupple(x,y), RGB</p>
+<p>For more specific nodes in the backend a custom widget has to be build, for example the <a class="reference internal" href="widgets.html#class-selection-widget"><span class="std std-ref">Class Selection</span></a>.</p>
+<span class="target" id="module-src.ui.nodepage"></span><dl class="class">
+<dt id="src.ui.nodepage.NodePage">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.nodepage.</code><code class="sig-name descname">NodePage</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">node_name</em>, <em class="sig-param">graph_manager</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a page for a specific graph node. Thereby add a widget for each parameter according to the value type:
+Currently supported types:</p>
+<blockquote>
+<div><p>int: Slider
+base2Int: Slider
+float: Slider
+bool: Switch
+str: TextInput
+color: ColorWheel
+list: Recycle view</p>
+</div></blockquote>
+<p>Changes made to any node have to be communicated via the graph manager.
+Incoming changes will be handled in the update_observable function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – Current node.</p></li>
+<li><p><strong>node_name</strong> – Name of the node.</p></li>
+<li><p><strong>graph_manager</strong> – Graph manager this page is subscribing to.</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.ui.nodepage.NodePage.create_widget">
+<code class="sig-name descname">create_widget</code><span class="sig-paren">(</span><em class="sig-param">name: str</em>, <em class="sig-param">widget: kivy.uix.widget.Widget</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage.create_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a widget Box for one parameter, possible including multiple sub widgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Parameter name, will be displayed.</p></li>
+<li><p><strong>widget</strong> – Widget to add, can consist of multiple sub widgets.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.nodepage.NodePage.generate_generic_widget">
+<code class="sig-name descname">generate_generic_widget</code><span class="sig-paren">(</span><em class="sig-param">type_specs=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">name: str = ''</em>, <em class="sig-param">set_value=None</em><span class="sig-paren">)</span> &#x2192; kivy.uix.widget.Widget<a class="headerlink" href="#src.ui.nodepage.NodePage.generate_generic_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a generic widget depending on the type, with the possible for minor specifications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type_specs</strong> – Specifications for the type currently including min, max.</p></li>
+<li><p><strong>value</strong> – Value of the parameter.</p></li>
+<li><p><strong>name</strong> – Name of the parameter that is adjusted.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Widget of a generic style (Slider, Switch, Textinut …).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.nodepage.NodePage.generate_specific_widget">
+<code class="sig-name descname">generate_specific_widget</code><span class="sig-paren">(</span><em class="sig-param">type_specs=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">name: str = ''</em>, <em class="sig-param">attributes=None</em><span class="sig-paren">)</span> &#x2192; kivy.uix.widget.Widget<a class="headerlink" href="#src.ui.nodepage.NodePage.generate_specific_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a widget that is more complex then the general widgets and has its own set up.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type_specs</strong> – Specified type.</p></li>
+<li><p><strong>value</strong> – Value.</p></li>
+<li><p><strong>name</strong> – Parameter name.</p></li>
+<li><p><strong>attributes</strong> – Observable node.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A specific Widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.nodepage.NodePage.modify_set">
+<code class="sig-name descname">modify_set</code><span class="sig-paren">(</span><em class="sig-param">node_name</em>, <em class="sig-param">param_name</em>, <em class="sig-param">value</em>, <em class="sig-param">value_type: type = &lt;class 'int'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage.modify_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slightly modified version of the InputInterface.set.
+This allows to define the type of value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.ui.nodepage.NodePage.update_observable">
+<code class="sig-name descname">update_observable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.nodepage.NodePage.update_observable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the value of a widget, if changes from the graph manager are communicated,
+:param *args:
+:param **kwargs: Contains a specific widget name and the updated value.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="beat-detection-and-bpm-manager">
+<h2>Beat Detection and BPM Manager<a class="headerlink" href="#beat-detection-and-bpm-manager" title="Permalink to this headline">¶</a></h2>
+<p>The beat detection works in realtime and is based on <a class="reference external" href="https://librosa.github.io/librosa/">librosa</a>.</p>
+<dl class="class">
+<dt id="src.ui.util.BeatDetector">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.util.</code><code class="sig-name descname">BeatDetector</code><span class="sig-paren">(</span><em class="sig-param">sample_rate=44100</em>, <em class="sig-param">length=8</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.util.BeatDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>The BeatDetector as the name claims, handles the beat detection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_rate</strong> – Samples per second. This is the standard samplerate, only change this if you really know what</p></li>
+<li><p><strong>are doing.</strong> (<em>you</em>) – </p></li>
+<li><p><strong>length</strong> – Length of a sample in seconds.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="src.ui.util.BeatDetector.detect_beat">
+<code class="sig-name descname">detect_beat</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#src.ui.util.BeatDetector.detect_beat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects the current BPM if there are enough samples currently in the stream. A longer blocksize results in a
+more accurate estimation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Beat tempo options, like previous bpm can be passed here to librosa.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Estimate of the BPM.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p>In the app you can either configure the BPM manually, put it on autodetect or change it via tap detection
+using the space bar.</p>
+<p>This is implemented in the <a class="reference internal" href="widgets.html#bpm-widget"><span class="std std-ref">BPM Widget</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="widgets.html" class="btn btn-neutral float-right" title="Widgets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Graph_Manager.html" class="btn btn-neutral float-left" title="Graph Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Benedikt Wiberg, Paul Kehnel
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
