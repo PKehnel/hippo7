@@ -1,13 +1,15 @@
-<p align="center">
-<a href="https://github.com/ambv/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-</p>
-
-# hippo7
+# Hippo7
 <center>"Why is this called hippo7? I don't know, but hippos are cool."</center>
 
-hippo7 is a tool for visual live shows that can be synchronized to music.
+Hippo7 is a tool for visual live shows that can be synchronized to music.
 
 The tool was build by [Benedikt Wiberg](http://github.com/qway/) and myself during an TUM Project at [Luminovo.ai](Luminovo.ai).
+
+![Some Class Images](/docs/docs/assets/images/hippo7_banner.png)
+
+## Documentation
+
+For a quickstart, installation help, examples and cool videos checkout the [documentaion](https://pkehnel.github.io/hippo7/).
 
 ## Development
 
@@ -18,9 +20,9 @@ Install [pre-commit](https://pre-commit.com/) and then run `pre-commit install` 
 ### Poetry
 Use [poetry](https://poetry.eustace.io/) to manage your dependencies.
 Please make sure it is installed for your current python version.
-Then start by adding your dependencies:
+Then to install the defined dependencies for our project run:
 ```console
-poetry add torch
+poetry install
 ```
 
 ### Makefile
