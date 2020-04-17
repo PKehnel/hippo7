@@ -3,7 +3,7 @@
 
 Hippo7 is a tool for visual live shows that can be synchronized to music.
 
-The tool was build by [Benedikt Wiberg](http://github.com/qway/) and myself during an TUM Project at [Luminovo.ai](Luminovo.ai).
+The tool was build by [Benedikt Wiberg](https://github.com/qway/) and myself during an TUM Project at [Luminovo.ai](https://luminovo.ai).
 
 ![Some Class Images](/docs/docs/assets/images/hippo7_banner.png)
 
