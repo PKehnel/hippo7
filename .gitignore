@@ -172,8 +172,8 @@ fabric.properties
 
 
 #Custom for hippo7
-assets/videos
-assets/audio
-assets/networks
+assets/videos/*
+assets/audio/*
+assets/networks/*
 /src/graphviz_graph.gv
 /src/graphviz_graph.gv.pdf
