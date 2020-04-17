@@ -3,6 +3,7 @@ from threading import Thread
 from glumpy import app
 from torch.cuda import is_available
 
+from hippo7_app.hippo7_backend import check_environment
 from hippo7_app.hippo7_backend.graph_setup import complex_gan_setup  # noqa
 from hippo7_app.hippo7_backend.graph_setup import debug_graph  # noqa
 from hippo7_app.hippo7_backend.graph_setup import no_gan_setup  # noqa
@@ -30,6 +31,9 @@ if get_device().startswith("cuda"):  # This optimizes performance in cuda mode
 app.use("pyglet")
 window = app.Window(512, 512, fullscreen=False, decoration=True)
 WindowManager.bind_window(window)
+
+# Check if all required Folders exist
+check_environment()
 
 # Instantiate generator
 # generator = simple_gan_setup(model_type=model_type)
